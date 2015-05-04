@@ -116,9 +116,9 @@ require __DIR__ . '/Facebook/autoload.php';
 
 				<ul>
 					<li>
-						<label for="firstname">firstname : </label>
-						<input class="in" value="'.$names[0].'" type="text" id="firstname" name="firstname">
-					</li>'.$names[0].'
+						<label for="firstname">firstname : </label><br>'.$names[0].'
+						<input value="'.$names[0].'" type="text" id="firstname" name="firstname">
+					</li>
 
 					<li>
 						<label for="lastname">lastname : </label>'.$names[1].'
