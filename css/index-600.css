@@ -1,0 +1,390 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, tryagain {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+body {
+	overflow-x: hidden; 
+	cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ol, ul {
+list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #f4851c;
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-family: calibri;
+	background-color: #ECEDE6;
+}
+
+header{
+	width: 100%;
+	height: 45px;
+	background-color: #f4851c;
+	position: relative;
+	z-index: 2;
+}
+
+#header{	
+	margin-top: 0.5%;
+	margin-left: 10%;
+	display: inline-block;
+	box-shadow: 1px 1px 10px 1px #999;
+}
+#container{
+	margin-top: 13%;
+	width: 100%;
+}
+
+#login{
+	margin: 0px auto;
+	width: 370px;
+	height: auto;
+	padding: 10px 1px 10px 60px;
+	-moz-box-shadow: 0px 0px 10px #888;
+	-o-box-shadow: 0px 0px 10px #888;
+	-webkit-box-shadow: 0px 0px 10px #888;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-o-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	background-color: #fff;
+}
+
+form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+form ul li {
+	margin: .9em 0 0 0;
+	padding: 0;
+}
+
+form * {
+	line-height: 1em;
+}
+
+label {
+	clear: left;
+	text-align: right;
+	width: 15%;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 15px;
+	color: #808080;
+}
+
+input {
+	font-size: .9em;
+	border: 2px solid #666;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #fff;
+	margin: 0;
+	padding: .4em;
+	width: 80%;
+}
+
+form *:focus {
+	border: 2px solid #7c412b;
+	outline: none;
+}
+
+input:valid {
+	background: #efe;
+}
+
+.buttons {
+	text-align: center;
+	margin: 20px 0 0 -80px;
+}
+
+input[type="submit"], input[type="button"] {
+	display: inline;
+	margin: 0 5px;
+	width: 13em;
+	padding: 10px;
+	border: 2px solid #4aaee7;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+	box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+	color: #fff;
+	background: #f4851c;
+	font-weight: bold;
+	-webkit-appearance: none;
+}
+
+input[type="submit"]:hover, input[type="submit"]:active, input[type="button"]:hover, input[type="button"]:active {
+	cursor: pointer;
+	background: #fff;
+	color: #ef7d50;
+}
+
+input[type="button"]:active, input[type="button"]:active {
+	background: #eee;
+	-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+	-webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+	box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+}
+
+
+/*home.php*/
+
+
+#left{
+	padding-top: 7px;
+	padding-right: 10px;
+	float: right;
+}
+
+#menu{
+	width: 100%;
+	height: 20px;
+	background-color: white;
+	padding-top: 5px;
+	padding-left: 0px;
+	color: #f4851c;
+	position: relative;
+	z-index: 1;
+}
+
+#category{
+	position: fixed;
+	top: 0;
+	z-index: 0;
+	cursor: pointer;
+	margin-left: -220px;
+	background-color: #f4851c;
+	width: 300px;
+	height: 100%;
+}
+
+pad{
+	padding-left: 50px;
+}
+
+h1{
+	font-size: 30px;
+	float: right;
+	padding-top: 100%;
+	color: white;
+	text-align: center;
+}
+
+#prof_pic{
+	width: 500px;
+	height: 500px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#prof_pic img{
+	border: 2px solid #aaa;
+	max-height: 515px;
+	max-width: 600px;
+}
+
+#info{
+	width: 300px;
+	height: 370px;
+	display: block;
+	float: right;
+	margin-right: 100px;
+	margin-top: 70px;
+	background-color: white;
+	padding: 30px;
+}
+
+#info > span{
+	display: inline-block;
+	width: 300px;
+	height: auto;
+}
+
+.wrong{
+	visibility: hidden;
+	width: 225px;
+	height: 0px;
+    color:#555;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;}
+
+.alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.error {
+    background:#ffecec url('../images/error.png') no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
+
+.username {
+	visibility: hidden;
+	width: 225px;
+	height: 0px;
+    color:#555;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+}
+
+.password {
+	visibility: hidden;
+	width: 225px;
+	height: 0px;
+    color:#555;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+}
+
+.prof_pic {
+    border: red 1px solid;
+}
+.pictureAndButtonDiv {
+	margin: 0 auto;
+    width: 1%;
+    display: table;
+}
+.cell {
+    height: auto;
+    overflow: hidden;
+}
+
+#mtop{
+	margin-top: 10px;
+}
+
+#change{
+	margin-top: 5px;
+}
+
+#search{
+	position: absolute;
+	top: 4px;
+	right: 41px;
+}
+#search > #search_bar > input{
+	width: 100%;
+}
+
+#results{
+	margin: 0px auto;
+	width: 90%;
+	text-align: center;
+	padding: 20px;
+	float: left;
+}
+
+#results img{
+	border-radius: 70px;
+}
+
+#user{
+	margin-top: 100px;
+	display: block;
+	margin-left: 0px;
+}
+
+#dim{
+	max-width: 140px;
+	max-height: 140px;
+}
+
+#info25{
+	display: inline-block;
+	width: 3%;
+	background-color: white;
+	height: 200px;
+	text-align: center;
+	padding: 20px;
+	border: solid 2px #000;
+	border-radius: 15px;
+	margin-left: 3.5%;
+}
+
+.fix1{
+	position: fixed;
+	top: 0px;
+}
+
+.fix2{
+	position: fixed;
+}
+
+.fix3{
+	position: fixed;
+	right: 10px;
+}
+
+#container_first{
+	margin-top: 140px;
+	width: 1000%;
+}
+
+#over{
+	overflow: hidden;
+}
+
+#sub10{
+	display: inline-block;
+	margin-top: -34000000px;
+	margin-left: 4.5%;
+}
+
+input[type="button"].right{
+	margin-top: 50px;
+	margin-right: 50px;
+	float: right;
+}
+
+#container1{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 5% auto;
+	text-align: center;
+	background-color: white;
+	width: 40%;
+	height: auto;
+	border: solid 2px #333;
+	border-radius: 30px;
+}
+
+#header > a > img{
+	height: 43px;
+	width: 200px;
+}
