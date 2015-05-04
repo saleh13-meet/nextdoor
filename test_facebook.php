@@ -42,12 +42,11 @@ require __DIR__ . '/Facebook/autoload.php';
     session_start();
     $app_id = '1467879120170390';
     $app_secret = '8c60b7151c708c98fe47bdf10ef1b4b6';
-    $redirect_url = 'http://nd-nextdoor2.rhcloud.com/test_facebook.php';
+    $redirect_url = 'http://nd-nextdoor2.rhcloud.com/nextdoor/test_facebook.php';
 
     FacebookSession::setDefaultApplication($app_id, $app_secret);
     $helper = new FacebookRedirectLoginHelper($redirect_url);
     $sess = $helper->getSessionFromRedirect();
-
 
     if (isset($sess)) {
       // store token in php session
@@ -75,7 +74,7 @@ require __DIR__ . '/Facebook/autoload.php';
       echo "Your Facebook ID: $id <br>";
     }else{
       // to get the login access
-      echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a>";
+      echo "<a href='" . $helper->getLoginUrl(array('email')) . "'>Login With FaceBook</a>";
     }
   }
   catch(FacebookRequestException $e){
