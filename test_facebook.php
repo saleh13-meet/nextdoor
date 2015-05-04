@@ -74,7 +74,7 @@ require __DIR__ . '/Facebook/autoload.php';
       $id = $graph->getId();                    //Facebook ID
       $email = $graph->getEmail();
       $name = $graph->getname();
-      // $me = $graph->getabout();
+      $me = $graph->getabout();
 
       echo "details<br>";
 
