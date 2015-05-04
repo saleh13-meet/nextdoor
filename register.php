@@ -162,9 +162,9 @@ require __DIR__ . '/Facebook/autoload.php';
     }else{
       // to get the login access
       echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a>";
-      // $string = "saleh mansour";
-      // $string2 = explode(" ", $string);
-      // echo $string2;
+      $string = "saleh mansour";
+      $string2 = explode(" ", $string);
+      echo $string2;
     }
   }
   catch(FacebookRequestException $e){
