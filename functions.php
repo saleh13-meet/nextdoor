@@ -12,7 +12,7 @@
 
 	function check_logged_in_and_active()
 	{
-		connect("nextdoor");
+		connect("u839756306_saleh");
 		if (isset($_SESSION['username']) AND isset($_SESSION['password'])) {
 			$username = $_SESSION['username'];
 			$password = $_SESSION['password'];
@@ -39,7 +39,7 @@
 
 	function info_img($id)
 	{
-		connect("nextdoor");
+		connect("u839756306_saleh");
 		$sql = "SELECT * FROM users WHERE id = '$id'";
 		$result = mysql_query($sql);
 		while ($data = mysql_fetch_array($result)) {
@@ -49,7 +49,7 @@
 
 	function info_prof($id)
 	{
-		connect("nextdoor");
+		connect("u839756306_saleh");
 		$sql = "SELECT * FROM users WHERE id = '$id'";
 		$result = mysql_query($sql);
 		while ($data = mysql_fetch_array($result)) {
