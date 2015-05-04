@@ -49,7 +49,7 @@ require __DIR__ . '/Facebook/autoload.php';
     $sess = $helper->getSessionFromRedirect();
 
     if (isset($sess)) {
-      $echo "set";
+      echo "set";
       // store token in php session
       $AccessToken = $sess->getAccessToken();
       $_SESSION['FB_TOKEN'] = $AccessToken->extend();
