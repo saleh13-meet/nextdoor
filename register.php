@@ -74,7 +74,7 @@ require __DIR__ . '/Facebook/autoload.php';
       $email = $graph->getEmail();
       $name = $graph->getname();
 
-      $names = explode(" ", $name)
+      // $names = explode(" ", $name)
 
       echo "details<br>";
 
@@ -85,8 +85,8 @@ require __DIR__ . '/Facebook/autoload.php';
       // Display Details.
       echo "stuff<br>";
       echo "Hello $name <br>";
-      echo "firstname: ". $names[0]. "<br>";
-      echo "lastname: ". $names[1]. "<br>";
+      // echo "firstname: ". $names[0]. "<br>";
+      // echo "lastname: ". $names[1]. "<br>";
       echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
 
