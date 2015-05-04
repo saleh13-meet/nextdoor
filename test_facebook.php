@@ -67,6 +67,7 @@ require __DIR__ . '/Facebook/autoload.php';
       // getting user image
       $image = 'http://graph.facebook.com/'.$id.'/picture';
 
+
       // Display Details.
       echo "Hello $name <br>";
       echo "Email: $email <br>";
