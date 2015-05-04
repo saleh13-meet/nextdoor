@@ -1,44 +1,98 @@
 <?php
 
-	// include 'functions.php';
-	// connect("NextDoor");
+define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook/');
+require __DIR__ . '/Facebook/autoload.php';
 
-	// if (isset($_POST['submit'])) {
-	// 	$firstname = $_POST['firstname'];
-	// 	$lastname = $_POST['lastname'];
-	// 	$username = $_POST['username'];
-	// 	$password = $_POST['password'];
-	// 	$conpassword = $_POST['conpassword'];
-	// 	$email = $_POST['email'];
-	// 	$school = $_POST['school'];
+/* INCLUSION OF LIBRARY FILES */
+  require_once('Facebook/FacebookSession.php');
+  require_once('Facebook/FacebookRequest.php');
+  require_once('Facebook/FacebookResponse.php');
+  require_once('Facebook/FacebookSDKException.php');
+  require_once('Facebook/FacebookRequestException.php');
+  require_once('Facebook/FacebookRedirectLoginHelper.php');
+  require_once('Facebook/FacebookAuthorizationException.php');
+  require_once('Facebook/GraphObject.php');
+  require_once('Facebook/GraphUser.php');
+  require_once('Facebook/GraphSessionInfo.php');
+  require_once('Facebook/Entities/AccessToken.php');
+  require_once('Facebook/HttpClients/FacebookCurl.php');
+  require_once('Facebook/HttpClients/FacebookHttpable.php');
+  require_once('Facebook/HttpClients/FacebookCurlHttpClient.php');
 
-	// 	if($password == $conpassword){
-	// 		$sql = "SELECT * FROM users WHERE username = '$username'";
-	// 		$result = mysql_query($sql)or die(mysql_error());
-	// 		$count = mysql_num_rows($result);
+/* USE NAMESPACES */
+  
+  use Facebook\FacebookSession;
+  use Facebook\FacebookRedirectLoginHelper;
+  use Facebook\FacebookRequest;
+  use Facebook\FacebookResponse;
+  use Facebook\FacebookSDKException;
+  use Facebook\FacebookRequestException;
+  use Facebook\FacebookAuthorizationException;
+  use Facebook\GraphObject;
+  use Facebook\GraphUser;
+  use Facebook\GraphSessionInfo;
+  use Facebook\AccessToken;
+  use Facebook\FacebookHttpable;
+  use Facebook\FacebookCurlHttpClient;
+  use Facebook\FacebookCurl;
 
-	// 		if($count == 1){
-	// 			echo "<script>alert('Username already exist!'); window.location.href='register.php';</script>";
-	// 		}
+  /*PROCESS*/
 
-	// 		$query = "SELECT * FROM users WHERE email = '$email'";
-	// 		$res = mysql_query($query)or die(mysql_error());
-	// 		$counts = mysql_num_rows($res);
+  try{
+    session_start();
+    $app_id = '1467879120170390';
+    $app_secret = '8c60b7151c708c98fe47bdf10ef1b4b6';
+    $redirect_url = 'http://nd-nextdoor2.rhcloud.com/nextdoor/test_facebook.php';
 
-	// 		if($counts == 1){
-	// 			echo "secound if ";
-	// 			echo "<script>alert('Email already exist!'); window.location.href='register.php';</script>";
-	// 		}
+    FacebookSession::setDefaultApplication($app_id, $app_secret);
+    $helper = new FacebookRedirectLoginHelper($redirect_url);
+    $sess = $helper->getSessionFromRedirect();
 
-	// 		$sql = "INSERT INTO users(`id`, `firstname`, `lastname`, `username`, `password`, `email`, `school_id`, `active`, `img`) 
-	// 			VALUES('', '$firstname', '$lastname', '$username', '$password', '$email', '$school', '1', 'default.jpeg')";
-	// 		mysql_query($sql);
-	// 		echo "<script>alert('Thanks!'); window.location.href='index.php';</script>";
-	// 	}
-	// 	else{
-	// 		echo "<script>alert('Password doesn\'t match!'); </script>";
-	// 	}
-	// }
+    if (isset($sess)) {
+      echo "set<br>";
+      // store token in php session
+      $AccessToken = $sess->getAccessToken();
+      $_SESSION['FB_TOKEN'] = $AccessToken->extend();
+
+      echo "token: ".$_SESSION['FB_TOKEN']. "<br>";
+
+      // create request object, capture response
+      $request = new FacebookRequest($sess, 'GET', '/me');
+
+      echo "request <br>";
+
+      // get graph object from response
+      $response = $request->execute();
+      $graph = $response->getGraphObject(GraphUser::classname());
+      $graph2 = $response->getGraphObject();
+
+      echo "graph<br>";
+
+      //get details from graph object
+      // $name = $graph->$getName();               //Full Name
+      $id = $graph->getId();                    //Facebook ID
+      $email = $graph->getEmail();
+      $name = $graph->getname();
+
+      echo "details<br>";
+
+      // getting user image
+      // $image = 'http://graph.facebook.com/'.$id.'/picture';
+
+
+      // Display Details.
+      echo "stuff<br>";
+      echo "Hello $name <br>";
+      echo "Email: $email <br>";
+      echo "Your Facebook ID: $id <br>";
+    }else{
+      // to get the login access
+      echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a>";
+    }
+  }
+  catch(FacebookRequestException $e){
+    echo "ERROR OCCURED, CODE: " . $e->getCode();
+  }
 
 ?>
 
