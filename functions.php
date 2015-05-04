@@ -159,6 +159,7 @@
 		}
 
 		echo'</header>';
+		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
 	}
 
 	function header3($css, $logout, $href, $extra_link)
@@ -203,6 +204,7 @@
 		}
 
 		echo'</header>';
+		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
 	}
 
 	function notif(){

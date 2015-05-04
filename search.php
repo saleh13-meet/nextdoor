@@ -30,10 +30,6 @@
 
 ?>
 
-
-
-		<div id="menu"><pad id="more"><a href="profile.php?id=<?php echo $id; ?>">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications (<?php $not = notif(); echo $not." new / "; notif3() ?>)</a></pad></div>
-
 		<div id="results">
 
 			<?php

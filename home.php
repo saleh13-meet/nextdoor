@@ -16,8 +16,6 @@
 		<script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>");
 
 ?>
-
-		<div id="menu"><pad id="more"><a href="myProfile.php?id=<?php echo $id; ?>">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications (<?php $not = notif(); echo $not." new / "; notif3() ?>)</a></pad></div>
 		<div id="category">
 			<h1>Events</h1>
 			<br><br>

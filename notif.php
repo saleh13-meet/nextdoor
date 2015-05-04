@@ -20,8 +20,6 @@
 
 ?>
 
-<div id="menu"><pad id="more"><a href="profile.php?id=<?php echo $id; ?>">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> </div>
-
 <div id="container1">
 	<?php
 
