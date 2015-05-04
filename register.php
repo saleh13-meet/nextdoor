@@ -5,7 +5,7 @@ require __DIR__ . '/Facebook/autoload.php';
 
 include 'functions.php';
 
-header2("register.css", True, False, "");
+header1("register.css", True, False, "");
 
 /* INCLUSION OF LIBRARY FILES */
   require_once('Facebook/FacebookSession.php');
