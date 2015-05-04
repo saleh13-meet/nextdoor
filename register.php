@@ -3,6 +3,10 @@
 define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook/');
 require __DIR__ . '/Facebook/autoload.php';
 
+include 'functions.php';
+
+header2("register.css", True, False, "");
+
 /* INCLUSION OF LIBRARY FILES */
   require_once('Facebook/FacebookSession.php');
   require_once('Facebook/FacebookRequest.php');
@@ -49,24 +53,17 @@ require __DIR__ . '/Facebook/autoload.php';
     $sess = $helper->getSessionFromRedirect();
 
     if (isset($sess)) {
-      echo "set<br>";
       // store token in php session
       $AccessToken = $sess->getAccessToken();
       $_SESSION['FB_TOKEN'] = $AccessToken->extend();
 
-      echo "token: ".$_SESSION['FB_TOKEN']. "<br>";
-
       // create request object, capture response
       $request = new FacebookRequest($sess, 'GET', '/me');
-
-      echo "request <br>";
 
       // get graph object from response
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
       $graph2 = $response->getGraphObject();
-
-      echo "graph<br>";
 
       //get details from graph object
       // $name = $graph->$getName();               //Full Name
@@ -75,8 +72,6 @@ require __DIR__ . '/Facebook/autoload.php';
       $name = $graph->getname();
 // 
       $names = explode(" ", $name);
-
-      echo "details<br>";
 
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
@@ -162,9 +157,9 @@ require __DIR__ . '/Facebook/autoload.php';
     }else{
       // to get the login access
       echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a><br>";
-      $string = "saleh mansour";
-      $string2 = explode(" ", $string);
-      echo "firstname: " . $string2[0] . " lastname: " . $string2[1];
+      // $string = "saleh mansour";
+      // $string2 = explode(" ", $string);
+      // echo "firstname: " . $string2[0] . " lastname: " . $string2[1];
     }
   }
   catch(FacebookRequestException $e){
