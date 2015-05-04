@@ -5,6 +5,7 @@
 	connect("u839756306_saleh");
 	check_logged_in_and_active();
 	$id = $_GET['id'];
+	$id2 = $_SESSION['id'];
 
 	if ($id != $id2){
 		header("location:profile.php?id=".$id);
