@@ -61,14 +61,14 @@ require __DIR__ . '/Facebook/autoload.php';
 
       echo "request";
 
-      // get graph obkect from response
+      // get graph object from response
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
 
       echo "graph";
 
       //get details from graph object
-      $name = $graph->$getName();               //Full Name
+      // $name = $graph->$getName();               //Full Name
       $id = $graph->getId();                    //Facebook ID
 
       echo "details";
