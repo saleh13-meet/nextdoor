@@ -54,22 +54,31 @@ require __DIR__ . '/Facebook/autoload.php';
       $AccessToken = $sess->getAccessToken();
       $_SESSION['FB_TOKEN'] = $AccessToken->extend();
 
+      echo "token: ".$_SESSION['FB_TOKEN'];
+
       // create request object, capture response
       $request = new FacebookRequest($sess, 'GET', '/me');
+
+      echo "request";
 
       // get graph obkect from response
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
 
+      echo "graph";
+
       //get details from graph object
       $name = $graph->$getName();               //Full Name
       $id = $graph->getId();                    //Facebook ID
+
+      echo "details";
 
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
 
 
       // Display Details.
+      echo "stuff";
       echo "Hello $name <br>";
       // echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
