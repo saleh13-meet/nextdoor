@@ -12,7 +12,7 @@
 
 	function check_logged_in_and_active()
 	{
-		connect("u839756306_saleh");
+		connect("nextdoor");
 		if (isset($_SESSION['username']) AND isset($_SESSION['password'])) {
 			$username = $_SESSION['username'];
 			$password = $_SESSION['password'];
@@ -39,10 +39,9 @@
 
 	function info_img($id)
 	{
-		connect("u839756306_saleh");
+		connect("nextdoor");
 		$sql = "SELECT * FROM users WHERE id = '$id'";
 		$result = mysql_query($sql);
-		if(!$result){return NULL;};
 		while ($data = mysql_fetch_array($result)) {
 			return $data['img'];
 		}
@@ -50,7 +49,7 @@
 
 	function info_prof($id)
 	{
-		connect("u839756306_saleh");
+		connect("nextdoor");
 		$sql = "SELECT * FROM users WHERE id = '$id'";
 		$result = mysql_query($sql);
 		while ($data = mysql_fetch_array($result)) {
@@ -61,12 +60,13 @@
 		while ($data = mysql_fetch_array($result)) {
 			echo "Nickname: ".$data['nickname']."<br><br>
 				  City: ".$data['city']."<br><br>
-				  details: ".$data['details'];
+				  details: <br>".$data['details'];
 		}
 	}
 
 	function header1($css, $logout, $href, $extra_link)
 	{
+		$id = $_SESSION['id'];
 		echo '<html>
 		<head>
 			<title>NextDoor</title>
@@ -75,23 +75,6 @@
 			'. $extra_link .'
 		</head>
 		<body>
-			<script>
-			  // window.fbAsyncInit = function() {
-			  //   FB.init({
-			  //     appId      : "1467879883503647",
-			  //     xfbml      : true,
-			  //     version    : "v2.3"
-			  //   });
-			  // };
-
-			  // (function(d, s, id){
-			  //    var js, fjs = d.getElementsByTagName(s)[0];
-			  //    if (d.getElementById(id)) {return;}
-			  //    js = d.createElement(s); js.id = id;
-			  //    js.src = "//connect.facebook.net/en_US/sdk.js";
-			  //    fjs.parentNode.insertBefore(js, fjs);
-			  //  }(document, "script", "facebook-jssdk"));
-			</script>
 			<header>
 				<div id="header">';
 				if ($href) {
@@ -111,6 +94,7 @@
 
 	function header2($css, $logout, $href, $extra_link)
 	{
+		$id = $_SESSION['id'];
 		echo '<html>
 		<head>
 			<title>NextDoor</title>
@@ -119,23 +103,6 @@
 			'. $extra_link .'
 		</head>
 		<body>
-		<script>
-			  // window.fbAsyncInit = function() {
-			  //   FB.init({
-			  //     appId      : "1467879883503647",
-			  //     xfbml      : true,
-			  //     version    : "v2.3"
-			  //   });
-			  // };
-
-			  // (function(d, s, id){
-			  //    var js, fjs = d.getElementsByTagName(s)[0];
-			  //    if (d.getElementById(id)) {return;}
-			  //    js = d.createElement(s); js.id = id;
-			  //    js.src = "//connect.facebook.net/en_US/sdk.js";
-			  //    fjs.parentNode.insertBefore(js, fjs);
-			  //  }(document, "script", "facebook-jssdk"));
-		</script>
 			<header>
 				<div id="header">';
 				if ($href) {
@@ -159,11 +126,13 @@
 		}
 
 		echo'</header>';
-		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
+		$not = notif();
+		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
 	}
 
 	function header3($css, $logout, $href, $extra_link)
 	{
+		$id = $_SESSION['id'];
 		echo '<html>
 		<head>
 			<title>NextDoor</title>
@@ -172,23 +141,6 @@
 			'. $extra_link .'
 		</head>
 		<body id="over">
-		<script>
-			  // window.fbAsyncInit = function() {
-			  //   FB.init({
-			  //     appId      : "1467879883503647",
-			  //     xfbml      : true,
-			  //     version    : "v2.3"
-			  //   });
-			  // };
-
-			  // (function(d, s, id){
-			  //    var js, fjs = d.getElementsByTagName(s)[0];
-			  //    if (d.getElementById(id)) {return;}
-			  //    js = d.createElement(s); js.id = id;
-			  //    js.src = "//connect.facebook.net/en_US/sdk.js";
-			  //    fjs.parentNode.insertBefore(js, fjs);
-			  //  }(document, "script", "facebook-jssdk"));
-		</script>
 			<header class="fix1">
 				<div id="header" class="fix1">';
 				if ($href) {
@@ -204,6 +156,7 @@
 		}
 
 		echo'</header>';
+		$not = notif();
 		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
 	}
 
@@ -234,15 +187,7 @@
 		$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 OR user1 = '$id' AND seen2 = 0 AND accepted = 1";
 		$result2 = mysql_query($sql2);
 		$x = mysql_num_rows($result2);
-		echo $x;
+		return $x;
 	}
-
-	function my_friends($me){
-		$sql = mysql_query("SELECT * FROM friends WHERE user1 = '$me' AND accepted = 1 OR user2 = '$me' AND accepted =1 ORDER BY firstname ASC");
-		for($i = 0; $array[$i] = mysql_fetch_assoc($sql); $i++) ;
-			array_pop($array);
-		return $array;
-	}
-	//#5890ff
 
 ?>
