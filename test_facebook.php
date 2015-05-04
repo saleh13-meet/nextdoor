@@ -48,6 +48,7 @@ require __DIR__ . '/Facebook/autoload.php';
     $helper = new FacebookRedirectLoginHelper($redirect_url);
     $sess = $helper->getSessionFromRedirect();
 
+
     if (isset($sess)) {
       // store token in php session
       $AccessToken = $sess->getAccessToken();
