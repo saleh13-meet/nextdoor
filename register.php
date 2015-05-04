@@ -110,12 +110,12 @@ include 'functions.php';
 				<ul>
 					<li>
 						<label for="firstname">firstname : </label>
-						<input value="'.$names[0].'" type="text" id="firstname" name="firstname">'.$names[0].'
+						'.$names[0].'<input value="'.$names[0].'" type="text" id="firstname" name="firstname">
 					</li>
 
 					<li>
 						<label for="lastname">lastname : </label>
-						<input value="'.$names[1].'" type="text" id="lastname" name="lastname">'.$names[1].'
+						'.$names[1].'<input value="'.$names[1].'" type="text" id="lastname" name="lastname">
 					</li>
 
 					<li>
