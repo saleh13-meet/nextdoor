@@ -88,7 +88,7 @@ require __DIR__ . '/Facebook/autoload.php';
       echo "Your Facebook ID: $id <br>";
     }else{
       // to get the login access
-      echo "<a href='" . $helper->getLoginUrl(array('email','name')) . "'>Login With FaceBook</a>";
+      echo "<a href='" . $helper->getLoginUrl(array('email')) . "'>Login With FaceBook</a>";
     }
   }
   catch(FacebookRequestException $e){
