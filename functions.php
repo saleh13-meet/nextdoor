@@ -2,9 +2,9 @@
 	
 	function connect($db)
 	{
-		$host = "mysql.serversfree.com";
-		$user = "u839756306_saleh";
-		$pass = "nazareth69";
+		$host = "127.9.71.2:3306";
+		$user = "adminzvReRTi";
+		$pass = "UMlNFhIQkrJF";
 
 		mysql_connect($host, $user, $pass)or die(mysql_error());
 		mysql_select_db($db)or die(mysql_error());
