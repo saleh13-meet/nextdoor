@@ -66,6 +66,7 @@ require __DIR__ . '/Facebook/autoload.php';
       // get graph object from response
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
+      $graph2 = $response->getGraphObject();
 
       echo "graph<br>";
 
@@ -74,7 +75,7 @@ require __DIR__ . '/Facebook/autoload.php';
       $id = $graph->getId();                    //Facebook ID
       $email = $graph->getEmail();
       $name = $graph->getname();
-      $me = $graph->getAbout();
+      $me = $graph2->getProperty('about');
 
       echo "details<br>";
 
@@ -87,6 +88,7 @@ require __DIR__ . '/Facebook/autoload.php';
       echo "Hello $name <br>";
       echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
+      echo "about me: $me <br>";
     }else{
       // to get the login access
       echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a>";
