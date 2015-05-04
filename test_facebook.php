@@ -59,11 +59,7 @@ require __DIR__ . '/Facebook/autoload.php';
       echo "token: ".$_SESSION['FB_TOKEN']. "<br>";
 
       // create request object, capture response
-      $request = new FacebookRequest($sess, 'GET', '/me',
-        array(
-          'abour' => $me, 
-          );
-        );
+      $request = new FacebookRequest($sess, 'GET', '/me');
 
       echo "request <br>";
 
@@ -79,7 +75,6 @@ require __DIR__ . '/Facebook/autoload.php';
       $id = $graph->getId();                    //Facebook ID
       $email = $graph->getEmail();
       $name = $graph->getname();
-      $me = $graph2->getProperty('about');
 
       echo "details<br>";
 
@@ -92,7 +87,6 @@ require __DIR__ . '/Facebook/autoload.php';
       echo "Hello $name <br>";
       echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
-      echo "about me: $me <br>";
     }else{
       // to get the login access
       echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a>";
