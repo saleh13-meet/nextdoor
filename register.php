@@ -156,7 +156,7 @@ header1("register.css", False, False, "");
 
     }else{
       // to get the login access
-      echo "<div id='register-wrapper'>
+      echo "<div id='register-wrapper2'>
       <a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'><img src='images/register.png'></a>
       </div>";
       // $string = "saleh mansour";
