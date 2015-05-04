@@ -220,11 +220,13 @@ input[type="button"]:hover, input[type="button"]:active {
 }
 
 #firstname{
+	width: 0px;
 	visibility: hidden;
 }
 
 #lastname{
 	visibility: hidden;
+	width: 0px;
 }
 
 #register-wrapper2 {
