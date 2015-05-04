@@ -5,7 +5,7 @@ require __DIR__ . '/Facebook/autoload.php';
 
 include 'functions.php';
 
-header1("register.css", True, False, "");
+header1("register.css", False, False, "");
 
 /* INCLUSION OF LIBRARY FILES */
   require_once('Facebook/FacebookSession.php');
@@ -156,7 +156,9 @@ header1("register.css", True, False, "");
 
     }else{
       // to get the login access
-      echo "<a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a><br>";
+      echo "<div id='register-wrapper'>
+      <a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'>Login With FaceBook</a>
+      </div>";
       // $string = "saleh mansour";
       // $string2 = explode(" ", $string);
       // echo "firstname: " . $string2[0] . " lastname: " . $string2[1];
