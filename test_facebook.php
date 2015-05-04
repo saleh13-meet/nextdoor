@@ -65,16 +65,16 @@ require __DIR__ . '/Facebook/autoload.php';
       $id = $graph->getId();                    //Facebook ID
 
       // getting user image
-      $image = 'http://graph.facebook.com/'.$id.'/picture';
+      // $image = 'http://graph.facebook.com/'.$id.'/picture';
 
 
       // Display Details.
       echo "Hello $name <br>";
-      echo "Email: $email <br>";
+      // echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
     }else{
       // to get the login access
-      echo "<a href='" . $helper->getLoginUrl(array('email')) . "'>Login With FaceBook</a>";
+      echo "<a href='" . $helper->getLoginUrl() . "'>Login With FaceBook</a>";
     }
   }
   catch(FacebookRequestException $e){
