@@ -51,37 +51,37 @@ require __DIR__ . '/Facebook/autoload.php';
     $sess = $helper->getSessionFromRedirect();
 
     if (isset($sess)) {
-      echo "set";
+      echo "set<br>";
       // store token in php session
       $AccessToken = $sess->getAccessToken();
       $_SESSION['FB_TOKEN'] = $AccessToken->extend();
 
-      echo "token: ".$_SESSION['FB_TOKEN'];
+      echo "token: ".$_SESSION['FB_TOKEN']. "<br>";
 
       // create request object, capture response
       $request = new FacebookRequest($sess, 'GET', '/me');
 
-      echo "request";
+      echo "request <br>";
 
       // get graph object from response
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
 
-      echo "graph";
+      echo "graph<br>";
 
       //get details from graph object
       // $name = $graph->$getName();               //Full Name
-      $fname = $graph->getFirst_name();
+      $fname = $graph->getfirst_name();
       $id = $graph->getId();                    //Facebook ID
 
-      echo "details";
+      echo "details<br>";
 
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
 
 
       // Display Details.
-      echo "stuff";
+      echo "stuff<br>";
       echo "Hello $fname <br>";
       // echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
