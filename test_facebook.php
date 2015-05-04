@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL);
+
 define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook/');
 require __DIR__ . '/Facebook/autoload.php';
 
@@ -69,6 +71,7 @@ require __DIR__ . '/Facebook/autoload.php';
 
       //get details from graph object
       // $name = $graph->$getName();               //Full Name
+      $fname = $graph->getFirst_name();
       $id = $graph->getId();                    //Facebook ID
 
       echo "details";
@@ -79,7 +82,7 @@ require __DIR__ . '/Facebook/autoload.php';
 
       // Display Details.
       echo "stuff";
-      echo "Hello $name <br>";
+      echo "Hello $fname <br>";
       // echo "Email: $email <br>";
       echo "Your Facebook ID: $id <br>";
     }else{
