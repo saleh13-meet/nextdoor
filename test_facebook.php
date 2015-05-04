@@ -59,7 +59,11 @@ require __DIR__ . '/Facebook/autoload.php';
       echo "token: ".$_SESSION['FB_TOKEN']. "<br>";
 
       // create request object, capture response
-      $request = new FacebookRequest($sess, 'GET', '/me');
+      $request = new FacebookRequest($sess, 'GET', '/me',
+        array(
+          'abour' => $me, 
+          );
+        );
 
       echo "request <br>";
 
