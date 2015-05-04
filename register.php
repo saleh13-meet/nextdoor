@@ -42,7 +42,7 @@ require __DIR__ . '/Facebook/autoload.php';
     session_start();
     $app_id = '1467879120170390';
     $app_secret = '8c60b7151c708c98fe47bdf10ef1b4b6';
-    $redirect_url = 'http://nd-nextdoor2.rhcloud.com/nextdoor/test_facebook.php';
+    $redirect_url = 'http://nd-nextdoor2.rhcloud.com/nextdoor/register.php';
 
     FacebookSession::setDefaultApplication($app_id, $app_secret);
     $helper = new FacebookRedirectLoginHelper($redirect_url);
