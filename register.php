@@ -83,12 +83,12 @@ require __DIR__ . '/Facebook/autoload.php';
 
 
       // Display Details.
-      echo "stuff<br>";
-      echo "Hello $name <br>";
-      echo "firstname: ". $names[0]. "<br>";
-      echo "lastname: ". $names[1]. "<br>";
-      echo "Email: $email <br>";
-      echo "Your Facebook ID: $id <br>";
+      // echo "stuff<br>";
+      // echo "Hello $name <br>";
+      // echo "firstname: ". $names[0]. "<br>";
+      // echo "lastname: ". $names[1]. "<br>";
+      // echo "Email: $email <br>";
+      // echo "Your Facebook ID: $id <br>";
 
       echo '<html>
 	<head>
@@ -121,8 +121,8 @@ require __DIR__ . '/Facebook/autoload.php';
 					</li>
 
 					<li>
-						<label for="lastname">lastname : </label>'.$names[1].'
-						<input class="in" value="'.$names[1].'" type="text" id="lastname" name="lastname">
+						<label for="lastname">lastname : </label><br>'.$names[1].'
+						<input value="'.$names[1].'" type="text" id="lastname" name="lastname">
 					</li>
 
 					<li>
