@@ -109,14 +109,14 @@ include 'functions.php';
 
 				<ul>
 					<li>
-						<label for="firstname">firstname : </label>
+						<label for="firstname">firstname : </label>'.$names[0].'
 						<input value="'.$names[0].'" type="text" id="firstname" name="firstname">
-					</li>'.$names[0].'
+					</li>
 
 					<li>
-						<label for="lastname">lastname : </label>
+						<label for="lastname">lastname : </label>'.$names[1].'
 						<input value="'.$names[1].'" type="text" id="lastname" name="lastname">
-					</li>'.$names[1].'
+					</li>
 
 					<li>
 						<label for="username">Username : </label>
