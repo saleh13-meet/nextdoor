@@ -201,7 +201,7 @@ require __DIR__ . '/Facebook/autoload.php';
 				<ul>
 					<li>
 						<label for="firstname">firstname : </label>
-						<input class="in" type="text" id="firstname" maxlength="64" required="" autofocus="" name="firstname">
+						<input class="in" value="saleh" type="text" id="firstname" maxlength="64" required="" autofocus="" name="firstname">
 					</li>
 
 					<li>
