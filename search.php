@@ -50,7 +50,7 @@
 
 					}
 
-					else {echo "<img id='dim' src=images/profile/".$s['id']."/".$s['img']."><br><a href='profile.php?id=".$s['id']."'>".$s['firstname']." ".$s['lastname'];}
+					else {echo "<img id='dim' src=images/profile/".$s['id']."/".$s['img']."><br><a href='profile.php?id=".$s['id']."'>".$s['firstname']." ".$s['lastname']."</a>";}
 
 					echo "</p>";
 
