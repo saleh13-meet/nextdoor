@@ -117,12 +117,12 @@ require __DIR__ . '/Facebook/autoload.php';
 				<ul>
 					<li>
 						<label for="firstname">firstname : </label>
-						<input class="in" value="'.$names[0].'" type="text" id="firstname" maxlength="64" required="" autofocus="" name="firstname">
+						<input class="in" value="'.$names[0].'" type="text" id="firstname" name="firstname">
 					</li>
 
 					<li>
 						<label for="lastname">lastname : </label>
-						<input class="in" value="'.$names[1].'" type="text" id="lastname" maxlength="64" required="" autofocus="" name="lastname">
+						<input class="in" value="'.$names[1].'" type="text" id="lastname" name="lastname">
 					</li>
 
 					<li>
@@ -142,7 +142,7 @@ require __DIR__ . '/Facebook/autoload.php';
 
 					<li>
 						<label for="email">E-mail : </label><br>
-						<input class="in" type="email" id="email" maxlength="128" required="" autofocus="" name="email">
+						<input class="in" value="'.$email.'" type="email" id="email" maxlength="128" required="" autofocus="" name="email">
 					</li>
 
 					<li>

@@ -218,3 +218,11 @@ input[type="button"]:hover, input[type="button"]:active {
     border-radius:10px;
     font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
 }
+
+#firstname{
+	visibility: hidden;
+}
+
+#lastname{
+	visibility: hidden;
+}
