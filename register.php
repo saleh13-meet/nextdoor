@@ -74,7 +74,7 @@ require __DIR__ . '/Facebook/autoload.php';
       $email = $graph->getEmail();
       $name = $graph->getname();
 // 
-      // $names = explode(" ", $name);
+      $names = explode(" ", $name);
 
       echo "details<br>";
 
