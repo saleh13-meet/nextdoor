@@ -53,30 +53,26 @@ $(document).ready(function(){
 					window.location = 'home.php';
 				}
 				else{
-					if (data != "uorp") {
-						alert("a confirmation code was sent to this email:\n"+data+"\nplease check your email");
-					}else{
-						$(".password").css({
-							"visibility" : "hidden",
-							"height" : "0",
-							"padding" : "0",
-							"margin" : "0"
-						});
-						$(".username").css({
-							"visibility" : "hidden",
-							"height" : "0",
-							"padding" : "0",
-							"margin" : "0"
-						});
-						$(".wrong").css({
-							"visibility" : "visible",
-							"height" : "auto",
-							"padding" : "10px 10px 10px 36px",
-							"margin" : "10px"
-						});
-						$("#passwd").val("");
-						$(".wrong").effect("shake");
-					};
+					$(".password").css({
+						"visibility" : "hidden",
+						"height" : "0",
+						"padding" : "0",
+						"margin" : "0"
+					});
+					$(".username").css({
+						"visibility" : "hidden",
+						"height" : "0",
+						"padding" : "0",
+						"margin" : "0"
+					});
+					$(".wrong").css({
+						"visibility" : "visible",
+						"height" : "auto",
+						"padding" : "10px 10px 10px 36px",
+						"margin" : "10px"
+					});
+					$("#passwd").val("");
+					$(".wrong").effect("shake");
 				};
 			});
 		};};

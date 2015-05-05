@@ -53,41 +53,41 @@
 		$id = $_SESSION['id'];
 
 		$sql = "INSERT INTO users(`id`, `firstname`, `lastname`, `username`, `password`, `email`, `school_id`, `activation`, `active`, `img`, `details`) 
-			VALUES('$id', '$firstname', '$lastname', '$username', '$password', '$email', '$school', '$activation', '0', 'default.jpeg', '0')";
+			VALUES('$id', '$firstname', '$lastname', '$username', '$password', '$email', '$school', '$activation', '1', 'default.jpeg', '0')";
 		$result = mysql_query($sql);
 		if ($result) echo "thanks";
 		// $message = " Thanks fo registering, To activate your account, please click on this link:\n\n";
 		// $message .= "nextdoor.gq/activate.php?key=$activation";
 		// $param = mail($email, 'Registration Confirmation - NextDoor', $message, 'From: confirm@nextdoor.gq');
-		$to  = $email;
+		// $to  = $email;
 
-		// subject
-		$subject = 'Email Confirmation - NextDoor';
+		// // subject
+		// $subject = 'Email Confirmation - NextDoor';
 
-		// message
-		$message = '
-		<html>
-		<head>
-		  <title>NextDoor - Confirm Email</title>
-		</head>
-		<body>
-		  <h2>Thank you for registering at NextDoor!</h2>
-		  <p>To confirm your e-mail address please go to the link below:</p>
-		  <p>nextdoor.gq/activate.php?key='.$activation.'  <br><br>~NextDoor - Confirm e-mail address</p>
-		</body>
-		</html>
-		';
+		// // message
+		// $message = '
+		// <html>
+		// <head>
+		//   <title>NextDoor - Confirm Email</title>
+		// </head>
+		// <body>
+		//   <h2>Thank you for registering at NextDoor!</h2>
+		//   <p>To confirm your e-mail address please go to the link below:</p>
+		//   <p>nextdoor.gq/activate.php?key='.$activation.'  <br><br>~NextDoor - Confirm e-mail address</p>
+		// </body>
+		// </html>
+		// ';
 
-		// To send HTML mail, the Content-type header must be set
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		// // To send HTML mail, the Content-type header must be set
+		// $headers  = 'MIME-Version: 1.0' . "\r\n";
+		// $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-		// Additional headers
-		$headers .= 'To: '.$firstname.' <'.$email.'>' . "\r\n";
-		$headers .= 'From: NextDoor <Confirm.NextDoor@yahoo.com>' . "\r\n";
+		// // Additional headers
+		// $headers .= 'To: '.$firstname.' <'.$email.'>' . "\r\n";
+		// $headers .= 'From: NextDoor <Confirm.NextDoor@yahoo.com>' . "\r\n";
 
-		// Mail it
-		$help = mail($to, $subject, $message, $headers);
+		// // Mail it
+		// $help = mail($to, $subject, $message, $headers);
 
 		$time = date('jS \of F Y h:i:s A');
 
