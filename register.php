@@ -75,6 +75,17 @@ include 'functions.php';
       $_SESSION['lname'] = $names[1];
       $_SESSION['id'] = $id;
 
+      connect("u839756306_saleh");
+
+      $sql = "SELECT * FROM users WHERE id = '$id' LIMIT 1";
+      $result = mysql_query($sql);
+      $count = mysql_num_rows($result);
+
+      if ($count == 1) {
+      	session_destroy();
+      	echo "<script>alert('Already registered please login!'); window.location.href='index.php';</script>";
+      }
+
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
 
