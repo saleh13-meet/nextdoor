@@ -3,8 +3,8 @@
 	include 'functions.php';
 	connect("u839756306_saleh");
 
-	$firstname = $_POST['firstname'];
-	$lastname = $_POST['lastname'];
+	$firstname = $_SESSION['fname'];
+	$lastname = $_SESSION['lname'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$conpassword = $_POST['conpassword'];
@@ -48,9 +48,10 @@
 
 		$activation = md5(uniqid(rand(), true));
 
+		$id = $_SESSION['id'];
 
 		$sql = "INSERT INTO users(`id`, `firstname`, `lastname`, `username`, `password`, `email`, `school_id`, `activation`, `active`, `img`, `details`) 
-			VALUES('', '$firstname', '$lastname', '$username', '$password', '$email', '$school', '$activation', '0', 'default.jpeg', '0')";
+			VALUES('$id', '$firstname', '$lastname', '$username', '$password', '$email', '$school', '$activation', '0', 'default.jpeg', '0')";
 		$result = mysql_query($sql);
 		if ($result) echo "thanks";
 		// $message = " Thanks fo registering, To activate your account, please click on this link:\n\n";
@@ -90,6 +91,8 @@
 
 		$sql = "INSERT INTO `friends`(`id`, `user1`, `user2`, `date`, `accepted`, `seen`, `seen2`) VALUES ('', '$id', '1', '$time', '1', '1', '0')";
 		mysql_query($sql);
+
+		session_destroy();
 
 		exit();
 	}
