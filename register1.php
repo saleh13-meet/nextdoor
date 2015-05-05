@@ -84,7 +84,7 @@
 
 		// Additional headers
 		$headers .= 'To: '.$firstname.' <'.$email.'>' . "\r\n";
-		$headers .= 'From: NextDoor <confirm@nextdoor.gq>' . "\r\n";
+		$headers .= 'From: NextDoor <nextdoor.sm98@gmail.com>' . "\r\n";
 
 		// Mail it
 		$help = mail($to, $subject, $message, $headers);
