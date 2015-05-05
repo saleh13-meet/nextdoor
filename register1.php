@@ -3,6 +3,8 @@
 	include 'functions.php';
 	connect("u839756306_saleh");
 
+	session_start();
+
 	$firstname = $_SESSION['fname'];
 	$lastname = $_SESSION['lname'];
 	$username = $_POST['username'];
