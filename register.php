@@ -84,8 +84,9 @@ include 'functions.php';
       if ($count == 1) {
       	session_destroy();
       	echo "<script>alert('Already registered please login!'); window.location.href='index.php';</script>";
+      	exit();
       }
-      
+
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
 
