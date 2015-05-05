@@ -5,7 +5,7 @@
 
 	connect("u839756306_saleh");
 
-	header3("index.css", True, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
+	header1("index.css", True, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
 	<script type='text/javascript' src='java/jquery-ui.js'></script>
 	<script src='java/jquery.validationEngine-en.js' type='text/javascript'></script>
 	<script src='java/first.js' type='text/javascript'></script>

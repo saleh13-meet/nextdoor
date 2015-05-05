@@ -6,10 +6,13 @@
 	$username = $_SESSION['username'];
 	$id = $_SESSION['id'];
 
-	if($_SESSION['user'] == true){
-		echo "<script>alert('sorry this user doesn\'t exist');</script>";
-		$_SESSION['user'] = false;
+	if (isset($_SESSION['user'])) {
+		if($_SESSION['user'] == true){
+			echo "<script>alert('sorry this user doesn\'t exist');</script>";
+			$_SESSION['user'] = false;
+		}
 	}
+	
 
 	header2("index.css", True, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
 		<script type='text/javascript' src='java/home.js'></script>

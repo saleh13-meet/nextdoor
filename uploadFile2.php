@@ -61,7 +61,7 @@ if ($moveResult != true) {
 // echo "The file extension is <strong>$fileExt</strong><br /><br />";
 // echo "The Error Message output for this upload is: $fileErrorMsg";
 
-connect("u354510632_saleh");
+connect("u839756306_saleh");
 
 $sql = "UPDATE users SET img = '$fileName' WHERE id = '$id'";
 $result = mysql_query($sql);

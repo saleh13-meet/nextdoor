@@ -154,7 +154,7 @@ include 'functions.php';
 
     }else{
       // to get the login access
-    	header1("register.css", False, False, "");
+    	header1("register.css", False, "<a href='index.php'><img src='images/Logo_2.jpg' width='293' height='63'></a>", "");
       echo "<div id='register-wrapper2'>
       <a href='" . $helper->getLoginUrl(array('email', 'user_about_me')) . "'><img src='images/register.png' width='300'></a>
       </div>";

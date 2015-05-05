@@ -29,9 +29,9 @@
 			$resultz = mysql_query($sqlz);
 			while ($data3 = mysql_fetch_array($resultz)) {
 				if ($data3['img'] == "default.jpeg") {
-						echo "<img id='dim' src=images/profile/".$data3['img']."><br><a href='profile.php?id=".$data3['id']."'>";
-				}else {echo "<img id='dim' src=images/profile/".$data3['id']."/".$data3['img']."><br><a href='profile.php?id=".$data3['id']."'>";}
-				echo "<p>".$data3['firstname']." ".$data3['lastname']."</p></a>accepted your friend request... <a href='ok.php?id=".$data3['id']."'>OK!</a><br><br>";
+						echo "<img id='dim' src=images/profile/".$data3['img']."><br>";
+				}else {echo "<img id='dim' src=images/profile/".$data3['id']."/".$data3['img']."><br>";}
+				echo "<p><a href='profile.php?id=".$data3['id']."'>".$data3['firstname']." ".$data3['lastname']."</a></p>accepted your friend request... <a href='ok.php?id=".$data3['id']."'>OK!</a><br><br>";
 			}
 		}
 		while ($data = mysql_fetch_array($result)) {
@@ -40,9 +40,9 @@
 			$result2 = mysql_query($sql2);
 			while ($data2 = mysql_fetch_array($result2)) {
 				if ($data2['img'] == "default.jpeg") {
-						echo "<img id='dim' src=images/profile/".$data2['img']."><br><a href='profile.php?id=".$data2['id']."'>";
-				}else {echo "<img id='dim' src=images/profile/".$data2['id']."/".$data2['img']."><br><a href='profile.php?id=".$data2['id']."'>";}
-				echo "<p>".$data2['firstname']." ".$data2['lastname']."</p></a>
+						echo "<img id='dim' src=images/profile/".$data2['img']."><br>";
+				}else {echo "<img id='dim' src=images/profile/".$data2['id']."/".$data2['img']."><br>";}
+				echo "<p><a href='profile.php?id=".$data2['id']."'>".$data2['firstname']." ".$data2['lastname']."</a></p>
 
 				<a href='acc.php?user1=".$data2['id']."'>Accept</a> / <a href='dec.php?user1=".$data2['id']."'>Decline</a><br><br>
 

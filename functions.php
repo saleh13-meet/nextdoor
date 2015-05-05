@@ -2,7 +2,7 @@
 	
 	function connect($db)
 	{
-		$host = "127.9.71.2:3306";
+		$host = "127.9.71.2";
 		$user = "adminzvReRTi";
 		$pass = "UMlNFhIQkrJF";
 
@@ -66,7 +66,6 @@
 
 	function header1($css, $logout, $href, $extra_link)
 	{
-		$id = $_SESSION['id'];
 		echo '<html>
 		<head>
 			<title>NextDoor</title>
@@ -127,67 +126,107 @@
 
 		echo'</header>';
 		$not = notif();
-		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
+		echo '<div id="men"></div><div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad><a href="friends.php">Friends</a></pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
 	}
 
-	function header3($css, $logout, $href, $extra_link)
-	{
-		$id = $_SESSION['id'];
-		echo '<html>
-		<head>
-			<title>NextDoor</title>
-			<!-- <link href="http://fonts.googleapis.com/css?family=Alex+Brush&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
-			<link rel="stylesheet" type="text/css" href="css/'. $css .'">
-			'. $extra_link .'
-		</head>
-		<body id="over">
-			<header class="fix1">
-				<div id="header" class="fix1">';
-				if ($href) {
-					echo $href;
-				}
-				else{
-						echo	'<img src="images/Logo_2.jpg" width="293" height="63" class="fix2">
-						</div>';
-					}
+	// function header3($css, $logout, $href, $extra_link)
+	// {
+	// 	$id = $_SESSION['id'];
+	// 	echo '<html>
+	// 	<head>
+	// 		<title>NextDoor</title>
+	// 		<!-- <link href="http://fonts.googleapis.com/css?family=Alex+Brush&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
+	// 		<link rel="stylesheet" type="text/css" href="css/'. $css .'">
+	// 		'. $extra_link .'
+	// 	</head>
+	// 	<body id="over">
+	// 		<header class="fix1">
+	// 			<div id="header" class="fix1">';
+	// 			if ($href) {
+	// 				echo $href;
+	// 			}
+	// 			else{
+	// 					echo	'<img src="images/Logo_2.jpg" width="293" height="63" class="fix2">
+	// 					</div>';
+	// 				}
 
-		if ($logout) {
-			echo "<a href='logout.php'><img id='left' src='images/logout.png' height='25' width='23' class='fix3'></a>";
-		}
+	// 	if ($logout) {
+	// 		echo "<a href='logout.php'><img id='left' src='images/logout.png' height='25' width='23' class='fix3'></a>";
+	// 	}
 
-		echo'</header>';
-		$not = notif();
-		echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
-	}
+	// 	echo'</header>';
+	// 	$not = notif();
+	// 	echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
+	// }
 
 	function notif(){
-		$id = $_SESSION['id'];
-		$x = 0;
-		$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 AND seen = 0  OR user1 = '$id' AND accepted = 1 AND seen2 = 0";
-		$result2 = mysql_query($sql2);
-		$x = mysql_num_rows($result2);
-		return $x;
+		if (isset($_SESSION['id'])) {
+			$id = $_SESSION['id'];
+			$x = 0;
+			$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 AND seen = 0  OR user1 = '$id' AND accepted = 1 AND seen2 = 0";
+			$result2 = mysql_query($sql2);
+			$x = mysql_num_rows($result2);
+			return $x;
+		}
+		
 	}
 
 	function notif2(){
-		$id = $_SESSION['id'];
-		$x = 0;
-		$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 AND seen = 0";
-		$result2 = mysql_query($sql2);
-		$x = mysql_num_rows($result2);
-		// $sqlz = "SELECT * FROM friends WHERE user1 = '$id' AND seen2 = 0";
-		// $resultz = mysql_query($sqlz);
-		// $x += mysql_num_rows($resltz);
-		return $x;
+		if (isset($_SESSION['id'])) {
+			$id = $_SESSION['id'];
+			$x = 0;
+			$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 AND seen = 0";
+			$result2 = mysql_query($sql2);
+			$x = mysql_num_rows($result2);
+			return $x;
+		}
+		
 	}
 
 	function notif3(){
-		$id = $_SESSION['id'];
-		$x = 0;
-		$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 OR user1 = '$id' AND seen2 = 0 AND accepted = 1";
-		$result2 = mysql_query($sql2);
-		$x = mysql_num_rows($result2);
-		return $x;
+		if (isset($_SESSION['id'])) {
+			$id = $_SESSION['id'];
+			$x = 0;
+			$sql2 = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0 OR user1 = '$id' AND seen2 = 0 AND accepted = 1";
+			$result2 = mysql_query($sql2);
+			$x = mysql_num_rows($result2);
+			return $x;
+		}
+		
+	}
+
+	function my_friends($id){
+		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
+		$result = mysql_query($sql);
+
+		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++) ;
+		array_pop($array);
+		for ($i=0; $i < count($array); $i++) {
+			// echo "user1<br>";
+			$friend = $array[$i]['user1'];
+			if ($friend == $id) {
+				$friend = $array[$i]['user2'];
+			}
+
+			$sql = "SELECT * from users WHERE id = '$friend'";
+			$result = mysql_query($sql)or die(mysql_error());
+			$data = mysql_fetch_array($result);
+			$friend = $data['firstname'] . " " . $data['lastname'] . " " . $data['id'] . " " . $data['img'];
+
+			// echo $friend;
+			// echo "<br>";
+			$friend = explode(" ", $friend);
+			$baes[$i] = $friend;
+		}
+		print_r($baes);
+
+		for ($i=0; $i < count($baes); $i++) {
+			if ($baes[$i][3] == 'default.jpeg') {
+				echo "<br><a href='profile.php?id=" . $baes[$i][2] . "'><img width='300px' src='images/profile/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a>";
+			}else{
+				echo "<br><a href='profile.php?id=" . $baes[$i][2] . "'><img width='300px' src='images/profile/" . $baes[$i][2] . "/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a>";
+			}
+		}
 	}
 
 ?>

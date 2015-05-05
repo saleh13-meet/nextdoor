@@ -42,17 +42,17 @@
 
 				while ($s = mysql_fetch_array($result)) {
 
-					echo "<p id='user'>";
+					echo "<p id='user'><a href='profile.php?id=".$s['id']."'>";
 
 					if ($s['img'] == "default.jpeg") {
 
-						echo "<img id='dim' src=images/profile/".$s['img']."><br><a href='profile.php?id=".$s['id']."'>".$s['firstname']." ".$s['lastname']."</a><br>";
+						echo "<img id='dim' src=images/profile/".$s['img']."><br>".$s['firstname']." ".$s['lastname']."<br>";
 
 					}
 
-					else {echo "<img id='dim' src=images/profile/".$s['id']."/".$s['img']."><br><a href='profile.php?id=".$s['id']."'>".$s['firstname']." ".$s['lastname']."</a>";}
+					else {echo "<img id='dim' src=images/profile/".$s['id']."/".$s['img']."><br>".$s['firstname']." ".$s['lastname'];}
 
-					echo "</p>";
+					echo "</p></a>";
 
 					$x++;
 

@@ -4,8 +4,7 @@ include 'functions.php';
 
 header1("index.css", False, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
 	<script type='text/javascript' src='java/login.js'></script>
-	<script type='text/javascript' src='java/jquery-ui.js'></script>
-<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>");
+	<script type='text/javascript' src='java/jquery-ui.js'></script>");
 
 ?>
 
