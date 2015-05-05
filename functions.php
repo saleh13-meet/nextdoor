@@ -222,9 +222,9 @@
 
 		for ($i=0; $i < count($baes); $i++) {
 			if ($baes[$i][3] == 'default.jpeg') {
-				echo "<br><a href='profile.php?id=" . $baes[$i][2] . "'><img width='300px' src='images/profile/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a>";
+				echo "<br><center><a href='profile.php?id=" . $baes[$i][2] . "'><img width='300px' src='images/profile/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a></center>";
 			}else{
-				echo "<br><a href='profile.php?id=" . $baes[$i][2] . "'><img width='300px' src='images/profile/" . $baes[$i][2] . "/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a>";
+				echo "<br><center><a href='profile.php?id=" . $baes[$i][2] . "'><img width='300px' src='images/profile/" . $baes[$i][2] . "/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a></center>";
 			}
 		}
 	}
