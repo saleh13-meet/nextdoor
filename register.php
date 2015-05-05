@@ -86,7 +86,7 @@ include 'functions.php';
       	echo "<script>alert('Already registered please login!'); window.location.href='index.php';</script>";
       }
 
-      echo $count;
+      echo $count. " " . $id;
 
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
