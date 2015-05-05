@@ -71,8 +71,8 @@ include 'functions.php';
 // 
       $names = explode(" ", $name);
 
-      $_SESSION['fname'] = $name[0];
-      $_SESSION['lname'] = $name[1];
+      $_SESSION['fname'] = $names[0];
+      $_SESSION['lname'] = $names[1];
       $_SESSION['id'] = $id;
 
       // getting user image
