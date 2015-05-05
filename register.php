@@ -77,7 +77,7 @@ include 'functions.php';
 
       connect("u839756306_saleh");
 
-      $sql = "SELECT * FROM users WHERE id = '$id' LIMIT 1";
+      $sql = "SELECT * FROM users WHERE id = '$id'";
       $result = mysql_query($sql);
       $count = mysql_num_rows($result);
 
@@ -85,6 +85,8 @@ include 'functions.php';
       	session_destroy();
       	echo "<script>alert('Already registered please login!'); window.location.href='index.php';</script>";
       }
+
+      echo $count;
 
       // getting user image
       // $image = 'http://graph.facebook.com/'.$id.'/picture';
