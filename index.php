@@ -9,7 +9,7 @@ header1("index.css", False, False, "<script type='text/javascript' src='java/jqu
 	<script type='text/javascript' src='java/jquery-ui.js'></script>");
 
 if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
-	echo "logged in";
+	check_logged_in_and_active();
 }
 
 ?>
