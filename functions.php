@@ -143,7 +143,7 @@
 
 		echo'</header>';
 		$not = notif();
-		echo '<div id="men"></div><div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad><a href="friends.php">Friends ('.num_friends().')</a></pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
+		echo '<div id="men"></div><div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad><a href="friends.php">Friends ('.num_friends($id).')</a></pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
 	}
 
 	// function header3($css, $logout, $href, $extra_link)
@@ -246,7 +246,7 @@
 		}
 	}
 
-	function num_friends() {
+	function num_friends($id) {
 		$sql = "SELECT * FROM friends WHERE user1 = '$id' AND accepted = 1 OR user2 = '$id' AND accepted = 1";
 		$result = mysql_query($sql);
 		$count = mysql_num_rows($result);
