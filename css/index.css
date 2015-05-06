@@ -461,10 +461,10 @@ textarea{
 	display: none;
 }
 
-#res{
+res{
 	transition: 0.5s;
 }
 
-#res:hover{
+res:hover img{
 	width: 300px;
 }
