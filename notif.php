@@ -12,7 +12,7 @@
 		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/index-600.css' />");
 
 	$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 0";
-	$sql2 = "SELECT * FROM friends WHERE  user2 = '$id' AND accepted = 1 AND seen2 = 0";
+	$sql2 = "SELECT * FROM friends WHERE  user1 = '$id' AND accepted = 1 AND seen2 = 0";
 	$result = mysql_query($sql);
 	$result2 = mysql_query($sql2);
 
