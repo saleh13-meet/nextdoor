@@ -461,8 +461,8 @@ textarea{
 	display: none;
 }
 
-res{
-	transision: 0.3s;
+res img{
+	transition: 0.3s;
 }
 
 res:hover img{
