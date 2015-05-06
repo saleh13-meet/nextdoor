@@ -4,13 +4,13 @@ include 'functions.php';
 
 session_start();
 
-if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
-	echo "logged in";
-}
-
 header1("index.css", False, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
 	<script type='text/javascript' src='java/login.js'></script>
 	<script type='text/javascript' src='java/jquery-ui.js'></script>");
+
+if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
+	echo "logged in";
+}
 
 ?>
 
