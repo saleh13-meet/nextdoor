@@ -107,4 +107,39 @@ $(document).ready(function() {
 			});
 		});
 	});
+
+		$("#del").click(function() {
+			$(".del").animate({
+				top : "100px",
+				opacity : "1"
+			}, 800);
+			$(".delForm").delay(400).animate({
+				opacity : "1"
+			}, 400);
+			$("#blackOut").css({
+				width : "100%",
+				height : "100%"
+			});
+			$("#blackOut").animate({
+				opacity : "0.7"
+			}, 800);
+		});
+
+		$("#no").click(function() {
+			$(".del").animate({
+				visibility : "hidden",
+				top : "-200px"
+			}, 800);
+			$(".delForm").animate({
+				opacity : "0"
+			}, 500);
+			$("#blackOut").animate({
+				opacity : "0"
+			}, 800);
+			$("#blackOut").delay(800).css({
+				width : "0",
+				height : "0"
+			});
+		});
+
 });

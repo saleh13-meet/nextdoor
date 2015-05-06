@@ -45,8 +45,15 @@
 			info_prof($id);
 			?>
 		</div>
-		<form action="del.php" method="POST">
-			<input id="del" type="submit" value="DELETE ACCOUNT">
-		</form>
+		<div id="blackOut"></div>
+			<div class="del">
+				<form class="delForm" action="del.php" method="POST">
+					<br>
+					<center><label>U sure nig?</label></center>
+					<br>
+					<input type="submit" value="YES"><input type="button" id="no" value="I ain't got enough balls">
+				</form>
+			</div>
+		<input id="del" type="button" value="DELETE ACCOUNT">
 	</body>
 </html>
