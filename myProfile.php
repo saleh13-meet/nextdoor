@@ -13,7 +13,10 @@
 
 	header2("index.css", True, "<a href='home.php'><img src='images/Logo_2.jpg' width='293' height='63'></a></div>", "
 		<link rel='stylesheet' media='screen and (max-width: 1024px)' href='css/index-1024.css' />
-		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/index-600.css' />");
+		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/index-600.css' />
+		<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
+		<script type='text/javascript' src='java/myProfile.js'></script>
+		<script type='text/javascript' src='java/jquery-ui.js'></script>");
 
 ?>
 		<div id="prof_pic">
@@ -41,7 +44,6 @@
 			<?php 
 			info_prof($id);
 			?>
-			<br><br><br><br>
 		</div>
 		<form action="del.php" method="POST">
 			<input id="del" type="submit" value="DELETE ACCOUNT">

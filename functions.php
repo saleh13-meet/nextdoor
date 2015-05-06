@@ -58,9 +58,9 @@
 		$sql = "SELECT * FROM info WHERE id = '$id'";
 		$result = mysql_query($sql);
 		while ($data = mysql_fetch_array($result)) {
-			echo "Nickname: ".$data['nickname']."<br><br>
-				  City: ".$data['city']."<br><br>
-				  details: <br>".$data['details'];
+			echo "Nickname: <label class='inf' id='nickname'>".$data['nickname']."</label><ed1> edit</ed1><input type='text' class='nickname'><done1>done</done1><br><br>
+				  City: <label class='inf' id='city'>".$data['city']."</label><ed2> edit</ed2><input type='text' class='city'><done2>done</done2><br><br>
+				  details: <br><label class='inf' id='details'>".$data['details']."</label><ed3> edit</ed3><textarea rows='6' class='details'></textarea><done3>done</done3>";
 		}
 	}
 
