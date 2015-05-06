@@ -16,6 +16,6 @@ $result = mysql_query($sql)or die(mysql_error());
 $result2 = mysql_query($sql2)or die(mysql_error());
 $result3 = mysql_query($sql3)or die(mysql_error());
 
-header("location:logout.php");
+echo $id;
 
 ?>
