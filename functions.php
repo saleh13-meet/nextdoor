@@ -250,7 +250,7 @@
 		$sql = "SELECT * FROM friends WHERE user1 = '$id' AND accepted = 1 OR user2 = '$id' AND accepted = 1";
 		$result = mysql_query($sql);
 		$count = mysql_num_rows($result);
-		echo $count;
+		return $count;
 	}
 
 ?>
