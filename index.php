@@ -2,6 +2,8 @@
 
 include 'functions.php';
 
+session_start();
+
 if(check_logged_in_and_active()){
 	header("location:home.php");
 }
