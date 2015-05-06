@@ -136,10 +136,10 @@ $(document).ready(function() {
 			$("#blackOut").animate({
 				opacity : "0"
 			}, 800);
-			$("#blackOut").delay(800).css({
+			$("#blackOut").delay(800).animate({
 				width : "0",
 				height : "0"
-			});
+			}, 100);
 		});
 
 });
