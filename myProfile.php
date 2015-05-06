@@ -43,5 +43,7 @@
 			?>
 			<br><br><br><br>
 		</div>
+		<form action="del.php" method="POST">
+		<input type="submit" value="DELETE ACCOUNT">
 	</body>
 </html>

@@ -4,6 +4,7 @@ include 'functions.php';
 
 session_start();
 
+check_logged_in_and_active();
 
 connect("u839756306_saleh");
 
