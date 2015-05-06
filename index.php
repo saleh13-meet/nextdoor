@@ -4,7 +4,7 @@ include 'functions.php';
 
 session_start();
 
-if(check_logged_in_and_active()){
+if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
 	echo "logged in";
 }
 
