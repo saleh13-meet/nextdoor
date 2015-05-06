@@ -235,7 +235,6 @@
 			$friend = explode(" ", $friend);
 			$baes[$i] = $friend;
 		}
-		print_r($baes);
 
 		for ($i=0; $i < count($baes); $i++) {
 			if ($baes[$i][3] == 'default.jpeg') {
