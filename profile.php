@@ -56,7 +56,7 @@
 							<input type="submit" id="add" value="add as friend">
 						</form>';
 				}else{
-					echo "friends";
+					echo "<label style='color: blue;'>friends</label>";
 				}
 			?>
 		</div>
