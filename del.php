@@ -2,8 +2,6 @@
 
 include 'functions.php';
 
-check_logged_in_and_active();
-
 connect("u839756306_saleh");
 
 $id = $_SESSION['id'];
