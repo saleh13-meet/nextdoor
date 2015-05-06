@@ -2,7 +2,7 @@
 
 include 'functions.php';
 
-if(logged_in_and_active()){
+if(check_logged_in_and_active()){
 	header("location:home.php");
 }
 
