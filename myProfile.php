@@ -16,7 +16,7 @@
 		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/index-600.css' />
 		<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
 		<script type='text/javascript' src='java/myProfile.js'></script>
-		<script type='text/javascript' src='java/jquery-ui.js'></script>");
+		<script type='text/javascript' src='java/jquery-ui.js'></script>", "");
 
 ?>
 		<div id="prof_pic">

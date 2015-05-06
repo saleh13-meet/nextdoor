@@ -108,7 +108,7 @@
 		echo'</header>';
 	}
 
-	function header2($css, $logout, $href, $extra_link)
+	function header2($css, $logout, $href, $extra_link, $search)
 	{
 		$id = $_SESSION['id'];
 		echo '<html>
@@ -132,7 +132,7 @@
 					echo "
 					<div id='search'>
 						<form method='POST' id='search_bar' action='search.php'>
-							<input type='text' placeholder='search' name='query'>
+							<input type='text' placeholder='search' value='".$search."' name='query'>
 						</form>
 					</div>
 					";

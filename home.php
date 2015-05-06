@@ -16,7 +16,7 @@
 
 	header2("index.css", True, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
 		<script type='text/javascript' src='java/home.js'></script>
-		<script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>");
+		<script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>", "");
 
 ?>
 		<div id="category">
