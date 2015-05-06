@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div id="info"><span>
-			<?php info_prof($id2) ?>
+			<?php info_prof2($id2) ?>
 		</span>
 			<br><br>
 			<?php
@@ -55,6 +55,8 @@
 							<input type="hidden" value="'. $id2 .'" name="user2">
 							<input type="submit" id="add" value="add as friend">
 						</form>';
+				}else{
+					echo "friends";
 				}
 			?>
 		</div>

@@ -64,6 +64,23 @@
 		}
 	}
 
+	function info_prof2($id)
+	{
+		connect("u839756306_saleh");
+		$sql = "SELECT * FROM users WHERE id = '$id'";
+		$result = mysql_query($sql);
+		while ($data = mysql_fetch_array($result)) {
+			echo $data['firstname']. "<br>". $data['lastname']. "<br><br>";
+		}
+		$sql = "SELECT * FROM info WHERE id = '$id'";
+		$result = mysql_query($sql);
+		while ($data = mysql_fetch_array($result)) {
+			echo "Nickname: ".$data['nickname']."<br><br>
+				  City: ".$data['city']."<br><br>
+				  details: ".$data['details'];
+		}
+	}
+
 	function header1($css, $logout, $href, $extra_link)
 	{
 		echo '<html>
