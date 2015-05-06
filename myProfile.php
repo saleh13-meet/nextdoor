@@ -44,7 +44,7 @@
 			<br><br><br><br>
 		</div>
 		<form action="del.php" method="POST">
-			<input type="hidden" value="<?php echo $id; ?>">
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
 			<input id="del" type="submit" value="DELETE ACCOUNT">
 		</form>
 	</body>
