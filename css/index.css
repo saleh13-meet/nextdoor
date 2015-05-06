@@ -461,6 +461,10 @@ textarea{
 	display: none;
 }
 
+#res{
+	transition: 0.5s;
+}
+
 #res:hover{
 	width: 300px;
 }
