@@ -390,3 +390,8 @@ input[type="button"].right{
 	height: 27px;
 	background-color: #f4851c;
 }
+
+#del{
+	position: absolute;
+	right: 170px;
+}
