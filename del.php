@@ -6,7 +6,7 @@ check_logged_in_and_active();
 
 connect("u839756306_saleh");
 
-$id = $_POST['id'];
+$id = $_SESSION['id'];
 
 $sql = "DELETE FROM users WHERE id = '$id' LIMIT 1";
 $sql2 = "DELETE FROM info WHERE id = '$id' LIMIT 1";
