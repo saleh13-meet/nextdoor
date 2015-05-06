@@ -90,26 +90,6 @@ $(document).ready(function() {
 		$("ed3").hide();
 		$("done3").show();
 
-		$(".details").keypress(function (e) {
- 			var key = e.which;
- 			if(key == 13) {
- 				var details2 = jQuery.trim($('.details').val());
-				if (details2.length == 0) {
-					details2 = details;
-				};
-				$.post("change.php",{
-					details : details2
-				}, function(data) {
-					$("done3").hide();
-					$(".details").hide();
-					var regex = /<br\s*[\/]?>/gi;
-					details2 = details2.replace(regex, "\r\n");
-					$("#details").show().text(details2);
-					$("ed3").show();
-				});
-			}
-		});
-
 		$("done3").click(function() {
 			var details2 = jQuery.trim($('.details').val());
 			if (details2.length == 0) {
