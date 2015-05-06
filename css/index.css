@@ -461,6 +461,14 @@ textarea{
 	display: none;
 }
 
+res img{
+	transision: 0.3s;
+}
+
+res:hover img{
+	width: 400px;
+}
+
 .del{
 	position: fixed;
 	top: -200px;
