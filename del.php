@@ -18,4 +18,5 @@ $result3 = mysql_query($sql3)or die(mysql_error());
 
 echo $id;
 
+
 ?>
