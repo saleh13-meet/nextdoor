@@ -53,7 +53,7 @@
 		$sql = "SELECT * FROM users WHERE id = '$id'";
 		$result = mysql_query($sql);
 		while ($data = mysql_fetch_array($result)) {
-			echo "<a href='profile.php?id=".$id."'>".$data['firstname']. "<br>". $data['lastname']. "</a><br><br>";
+			echo "<a href='myProfile.php?id=".$id."'>".$data['firstname']. "<br>". $data['lastname']. "</a><br><br>";
 		}
 		$sql = "SELECT * FROM info WHERE id = '$id'";
 		$result = mysql_query($sql);
@@ -70,7 +70,7 @@
 		$sql = "SELECT * FROM users WHERE id = '$id'";
 		$result = mysql_query($sql);
 		while ($data = mysql_fetch_array($result)) {
-			echo $data['firstname']. "<br>". $data['lastname']. "<br><br>";
+			echo "<a href='profile.php?id=".$id."'>".$data['firstname']. "<br>". $data['lastname']. "</a><br><br>";
 		}
 		$sql = "SELECT * FROM info WHERE id = '$id'";
 		$result = mysql_query($sql);
