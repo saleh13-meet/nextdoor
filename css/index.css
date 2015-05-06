@@ -460,3 +460,7 @@ done3{
 textarea{
 	display: none;
 }
+
+#res:hover{
+	width: 300px;
+}
