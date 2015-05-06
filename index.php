@@ -9,7 +9,9 @@ header1("index.css", False, False, "<script type='text/javascript' src='java/jqu
 	<script type='text/javascript' src='java/jquery-ui.js'></script>");
 
 if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
-	check_logged_in_and_active();
+	if(check_logged_in_and_active()){
+		header("location:home.php");
+	}
 }
 
 ?>
