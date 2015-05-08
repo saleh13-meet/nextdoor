@@ -514,7 +514,7 @@ img#res:hover{
 	border: 1px solid #eaeaea;
 	position: absolute;
 	z-index: 9;
-	background: #fff;
+	background-color: #fff;
 	list-style: none;
 }
 
