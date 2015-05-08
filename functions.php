@@ -228,18 +228,11 @@
 	}
 
 	function my_friends_search($friends, $id){
-		echo "ok1";
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
 		$result = mysql_query($sql)or die(mysql_error());
 
-		if (mysql_fetch_assoc($result)) {
-			echo "result";
-		}
-
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++);
-		echo "ok2";
 		array_pop($array);
-		print_r($array);
 
 		for ($i=0; $i < count($array); $i++) {
 			// echo "user1<br>";
@@ -257,14 +250,6 @@
 			$friend = explode(" ", $friend);
 			$baes[$i] = $friend;
 		}
-		echo "ok3";
-
-		if (preg_match($pattern, $baes[$i][1], $matches, PREG_OFFSET_CAPTURE)){
-			echo "<script>alert('works')</script>";
-		}
-
-		echo "ok4";
-
 
 		for ($i=0; $i < count($baes); $i++) {
 			$pattern = '/^$friends/';
@@ -282,8 +267,6 @@
 				}
 			}
 		}
-
-		echo "wtf";
 	}
 
 	function num_friends($id) {
