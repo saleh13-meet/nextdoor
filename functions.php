@@ -229,9 +229,9 @@
 
 	function my_friends_search($friends, $id){
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
-		$result = mysql_query($sql);
+		$result = mysql_query($sql)or die(mysql_error());
 
-		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++) ;
+		for($i = 0; $array[$i] = mysql_fetch_assoc($result)or die(mysql_error()); $i++) ;
 		array_pop($array);
 		for ($i=0; $i < count($array); $i++) {
 			// echo "user1<br>";
@@ -242,11 +242,15 @@
 
 			$sql = "SELECT * from users WHERE id = '$friend'";
 			$result = mysql_query($sql)or die(mysql_error());
-			$data = mysql_fetch_array($result);
+			$data = mysql_fetch_array($result)or die(mysql_error());
 			$friend = $data['firstname'] . " " . $data['lastname'] . " " . $data['id'] . " " . $data['img'];
 
 			$friend = explode(" ", $friend);
 			$baes[$i] = $friend;
+		}
+
+		if (preg_match($pattern, $baes[$i][1], $matches, PREG_OFFSET_CAPTURE)){
+			echo "<script>alert('works')</script>";
 		}
 
 
