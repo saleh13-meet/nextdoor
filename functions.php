@@ -184,7 +184,7 @@
 	}
 
 	function my_friends($id){
-		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1 ORDER BY firstname ASC";
+		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
 		$result = mysql_query($sql);
 
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++) ;
@@ -196,7 +196,7 @@
 				$friend = $array[$i]['user2'];
 			}
 
-			$sql = "SELECT * from users WHERE id = '$friend'";
+			$sql = "SELECT * from users WHERE id = '$friend' ORDER BY firstname ASC";
 			$result = mysql_query($sql)or die(mysql_error());
 			$data = mysql_fetch_array($result);
 			$friend = $data['firstname'] . " " . $data['lastname'] . " " . $data['id'] . " " . $data['img'];
