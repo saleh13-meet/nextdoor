@@ -232,7 +232,7 @@
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
 		$result = mysql_query($sql)or die(mysql_error());
 
-		if ($count = mysql_num_rows($result) > 0) {
+		if (mysql_fetch_assoc($result)) {
 			echo "result";
 		}
 
