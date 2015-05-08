@@ -236,7 +236,7 @@
 			echo "result";
 		}
 
-		for($i = 0; $array[$i] = mysql_fetch_assoc($result)or die(mysql_error()); $i++);
+		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++);
 		echo "ok2";
 		array_pop($array);
 		print_r($array);
