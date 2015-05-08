@@ -461,11 +461,11 @@ textarea{
 	display: none;
 }
 
-res img{
+img#res{
 	transition: 0.3s;
 }
 
-res:hover img{
+img#res:hover{
 	width: 400px;
 }
 
@@ -498,4 +498,54 @@ res:hover img{
 	background-color: black;
 	top: 0;
 	opacity: 0;
+}
+
+.input_container input{
+	width: 200px;
+}
+
+.input_container {
+	height: 30px;
+	float: left;
+}
+
+.input_container ul {
+	width: 200px;
+	border: 1px solid #eaeaea;
+	position: absolute;
+	z-index: 9;
+	background: #fff;
+	list-style: none;
+}
+
+.input_container ul li {
+	padding: 10px;
+}
+
+.input_container ul li:hover {
+	background: #eaeaea;
+}
+
+#users_list_id {
+	display: none;
+}
+
+#users_list_id a{
+	border: 0;
+}
+
+#friends{
+	width: 400px;
+}
+
+.darkBG{
+	background-color: #eee;
+}
+
+.darkerBG{
+	background-color: #ccc;
+}
+
+.darkestBG{
+	background-color: #bbb;
 }

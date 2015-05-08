@@ -115,8 +115,10 @@
 		echo '<html>
 		<head>
 			<title>NextDoor</title>
-			<!-- <link href="http://fonts.googleapis.com/css?family=Alex+Brush&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
 			<link rel="stylesheet" type="text/css" href="css/'. $css .'">
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<script type="text/javascript" src="java/jquery-1.11.2.js"></script>
+			<script type="text/javascript" src="java/script.js"></script>
 			'. $extra_link .'
 		</head>
 		<body>
@@ -133,7 +135,14 @@
 					echo "
 					<div id='search'>
 						<form method='POST' id='search_bar' action='search.php'>
-							<input type='text' placeholder='search' value='".$search."' name='query'>
+							<div class='input_container'>";
+							if ($query) {
+								echo "<input autocomplete='off' placeholder='search' value='".$query."' type='text' name='query' id='users_id' onkeyup='autocomplet()'>";
+							}else{
+								echo "<input autocomplete='off' placeholder='search' type='text' name='query' id='users_id' onkeyup='autocomplet()'>";
+							}
+			                    echo "<ul id='users_list_id'></ul>
+		                    </div>
 						</form>
 					</div>
 					";
