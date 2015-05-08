@@ -189,6 +189,7 @@
 
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++) ;
 		array_pop($array);
+		$sql = "SELECT * from users WHERE id = '$friend' ORDER BY firstname ASC";
 		for ($i=0; $i < count($array); $i++) {
 			// echo "user1<br>";
 			$friend = $array[$i]['user1'];
@@ -196,7 +197,8 @@
 				$friend = $array[$i]['user2'];
 			}
 
-			$sql = "SELECT * from users WHERE id = '$friend' ORDER BY firstname ASC";
+			
+
 			$result = mysql_query($sql)or die(mysql_error());
 			$data = mysql_fetch_array($result);
 			$friend = $data['firstname'] . " " . $data['lastname'] . " " . $data['id'] . " " . $data['img'];
