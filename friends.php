@@ -21,9 +21,9 @@ echo "<br><Br><br><br>";
 
 ?>
 <center>
-<input autocomplete='off' placeholder='Search Friends' type='text' name='friends' id='friends' onkeyup='findFriend()'>
-<br>
-<ul id='friends_list'></ul>
+	<form method="POST" action="friends.php">
+		<input autocomplete='off' placeholder='Search Friends' type='text' name='friends' id='friends' onkeyup='findFriend()'>
+	</form>
 </center>
 
 
@@ -31,7 +31,7 @@ echo "<br><Br><br><br>";
 
 if (isset($_POST['friends'])) {
 	$friends = $_POST['friends'];
-	my_friends_search($friends);
+	my_friends_search($friends, $id);
 }else{
 	my_friends($id);
 }
