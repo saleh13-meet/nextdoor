@@ -230,7 +230,9 @@
 	function my_friends_search($friends, $id){
 		echo "ok1";
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
+		echo "ok1";
 		$result = mysql_query($sql)or die(mysql_error());
+		echo "ok1";
 
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result)or die(mysql_error()); $i++) ;
 		array_pop($array);
