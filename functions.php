@@ -259,7 +259,7 @@
 				}else{
 					echo "<br><center><res><div id='".$baes[$i][2]."'><a href='profile.php?id=" . $baes[$i][2] . "'><img width='100px' id='res' src='images/profile/" . $baes[$i][2] . "/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a></div></res></center>";
 				}
-			}elseif (stristr($baes[$i][0], $friends)) {
+			}elseif (stristr($baes[$i][1], $friends)) {
 				if ($baes[$i][3] == 'default.jpeg') {
 					echo "<br><center><res><div id='".$baes[$i][2]."'><a href='profile.php?id=" . $baes[$i][2] . "'><img width='100px' id='res' src='images/profile/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a></div></res></center>";
 				}else{
