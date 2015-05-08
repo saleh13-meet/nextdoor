@@ -237,8 +237,9 @@
 		}
 
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result)or die(mysql_error()); $i++);
-			echo "ok2";
+		echo "ok2";
 		array_pop($array);
+		print_r($array);
 
 		for ($i=0; $i < count($array); $i++) {
 			// echo "user1<br>";
