@@ -242,7 +242,7 @@
 			}
 
 
-			$sql = "SELECT * from users WHERE id = '$friend'";
+			$sql = "SELECT * from users WHERE id = '$friend' ORDER BY firstname ASC";
 			$result = mysql_query($sql)or die(mysql_error());
 			$data = mysql_fetch_array($result)or die(mysql_error());
 			$friend = $data['firstname'] . " " . $data['lastname'] . " " . $data['id'] . " " . $data['img'];
