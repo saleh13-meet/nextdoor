@@ -270,6 +270,8 @@
 				}
 			}
 		}
+
+		echo "<script>alert('not works')</script>";
 	}
 
 	function num_friends($id) {
