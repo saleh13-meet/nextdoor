@@ -232,6 +232,8 @@
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
 		$result = mysql_query($sql)or die(mysql_error());
 
+		$array = [];
+
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result)or die(mysql_error()); $i++);
 			echo "ok2";
 		array_pop($array);
