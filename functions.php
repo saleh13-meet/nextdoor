@@ -57,6 +57,7 @@
 		}
 		$sql = "SELECT * FROM info WHERE id = '$id'";
 		$result = mysql_query($sql);
+		$count = mysql_num_rows($result);
 		while ($data = mysql_fetch_array($result)) {
 			echo "Nickname: <label class='inf' id='nickname'>".$data['nickname']."</label><ed1> edit</ed1><input type='text' class='nickname'><done1>done</done1><br><br>
 				  City: <label class='inf' id='city'>".$data['city']."</label><ed2> edit</ed2><input type='text' class='city'><done2>done</done2><br><br>
@@ -146,36 +147,6 @@
 		echo '<div id="men"></div><div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad><a href="friends.php">Friends ('.num_friends($id).')</a></pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
 	}
 
-	// function header3($css, $logout, $href, $extra_link)
-	// {
-	// 	$id = $_SESSION['id'];
-	// 	echo '<html>
-	// 	<head>
-	// 		<title>NextDoor</title>
-	// 		<!-- <link href="http://fonts.googleapis.com/css?family=Alex+Brush&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
-	// 		<link rel="stylesheet" type="text/css" href="css/'. $css .'">
-	// 		'. $extra_link .'
-	// 	</head>
-	// 	<body id="over">
-	// 		<header class="fix1">
-	// 			<div id="header" class="fix1">';
-	// 			if ($href) {
-	// 				echo $href;
-	// 			}
-	// 			else{
-	// 					echo	'<img src="images/Logo_2.jpg" width="293" height="63" class="fix2">
-	// 					</div>';
-	// 				}
-
-	// 	if ($logout) {
-	// 		echo "<a href='logout.php'><img id='left' src='images/logout.png' height='25' width='23' class='fix3'></a>";
-	// 	}
-
-	// 	echo'</header>';
-	// 	$not = notif();
-	// 	echo '<div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad>HomePage</pad> <pad>About US</pad> <pad><a href="notif.php">Notifications ( '.$not.' new / '.notif3().' )</a></pad></div>';
-	// }
-
 	function notif(){
 		if (isset($_SESSION['id'])) {
 			$id = $_SESSION['id'];
@@ -213,7 +184,7 @@
 	}
 
 	function my_friends($id){
-		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
+		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1 ORDER BY firstname ASC";
 		$result = mysql_query($sql);
 
 		for($i = 0; $array[$i] = mysql_fetch_assoc($result); $i++) ;

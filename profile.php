@@ -14,7 +14,7 @@
 	header2("index.css", True, "<a href='home.php'><img src='images/Logo_2.jpg' width='293' height='63'></a></div>", "
 		<link rel='stylesheet' media='screen and (max-width: 1024px)' href='css/index-1024.css' />
 		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/index-600.css' />
-		<script type='text/javascript' src='java/addFriend.js'></script>");
+		<script type='text/javascript' src='java/addFriend.js'></script>", "");
 
 ?>
 		<div id="prof_pic">
