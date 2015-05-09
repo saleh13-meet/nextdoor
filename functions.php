@@ -258,6 +258,8 @@
 			$baes[$i] = $friend;
 		}
 
+		sort($baes);
+
 		for ($i=0; $i < count($baes); $i++) {
 			$pattern = '/^$friends/';
 			if (stristr($baes[$i][0], $friends)) {
