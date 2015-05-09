@@ -7,6 +7,8 @@
 	$id = $_GET['id'];
 	$id2 = $_SESSION['id'];
 
+	echo "$id2";
+
 	if ($id != $id2){
 		header("location:profile.php?id=".$id);
 	}

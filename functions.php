@@ -189,7 +189,6 @@
 			$x = mysql_num_rows($result2);
 			return $x;
 		}
-		
 	}
 
 	function my_friends($id){
