@@ -21,18 +21,7 @@
 		<script type='text/javascript' src='java/jquery-ui.js'></script>", "");
 
 ?>
-<script>
-$(document).ready(function(){
-$.ajax({
-url: "images/profile/1/1.bmp",
-type: "POST",
-data: {bla:"bla"},
-success: function(data){
-alert(data);
-}
-});
-});
-</script>
+
 		<div id="prof_pic">
   			<div class="pictureAndButtonDiv">
     			<div class="cell">
