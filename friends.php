@@ -13,7 +13,6 @@ $id = $_SESSION['id'];
 
 
 header2("index.css", True, False, "<script type='text/javascript' src='java/jquery-1.11.2.js'></script>
-		<script type='text/javascript' src='java/home.js'></script>
 		<script type='text/javascript' src='java/friends.js'></script>
 		<script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>", "");
 echo "<br><Br><br><br>";
@@ -21,9 +20,9 @@ echo "<br><Br><br><br>";
 
 ?>
 <center>
-	<form method="POST" action="friends.php">
-		<input autocomplete='off' placeholder='Search Friends' type='text' name='friends' id='friends' onkeyup='findFriend()'>
-	</form>
+<input autocomplete='off' placeholder='Search Friends' type='text' name='friends' id='friends' onkeyup='findFriend()'>
+<br>
+<ul id='friends_list'></ul>
 </center>
 
 
@@ -31,7 +30,7 @@ echo "<br><Br><br><br>";
 
 if (isset($_POST['friends'])) {
 	$friends = $_POST['friends'];
-	my_friends_search($friends, $id);
+	my_friends_search($friends);
 }else{
 	my_friends($id);
 }

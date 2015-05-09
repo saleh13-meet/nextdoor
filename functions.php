@@ -218,6 +218,8 @@
 
 		sort($baes);
 
+		echo "<div id='find'></div><div id='my_friends'>";
+
 		for ($i=0; $i < count($baes); $i++) {
 			if ($baes[$i][3] == 'default.jpeg') {
 				echo "<br><center><res><a href='profile.php?id=" . $baes[$i][2] . "'><img width='100px' id='res' src='images/profile/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a></res></center>";
@@ -225,12 +227,13 @@
 				echo "<br><center><res><a href='profile.php?id=" . $baes[$i][2] . "'><img width='100px' id='res' src='images/profile/" . $baes[$i][2] . "/" . $baes[$i][3] . "'><br>" . $baes[$i][0] . " " . $baes[$i][1] . "</a></res></center>";
 			}
 		}
+
+		echo "</div>";
 	}
 
 	function my_friends_search($friends, $id){
 		if ($friends == '') {
 			my_friends($id);
-			exit();
 		}
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
 		$result = mysql_query($sql)or die(mysql_error());
