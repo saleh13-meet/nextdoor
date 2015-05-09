@@ -2,7 +2,7 @@
 
 	include 'functions.php';
 
-	connect("nextdoor");
+	connect("u839756306_saleh");
 
 	$keyword = $_POST['friend'];
 	// $sql = "SELECT * FROM users WHERE firstname LIKE '$keyword' OR lastname LIKE '$keyword' LIMIT";
