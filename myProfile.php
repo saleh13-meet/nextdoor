@@ -6,9 +6,7 @@
 	check_logged_in_and_active();
 	$id = $_GET['id'];
 	$id2 = $_SESSION['id'];
-
-	echo "$id2";
-
+	
 	if ($id != $id2){
 		header("location:profile.php?id=".$id);
 	}
