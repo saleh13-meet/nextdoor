@@ -6,7 +6,7 @@
 	check_logged_in_and_active();
 	$id = $_GET['id'];
 	$id2 = $_SESSION['id'];
-	
+
 	if ($id != $id2){
 		header("location:profile.php?id=".$id);
 	}
@@ -19,7 +19,6 @@
 		<script type='text/javascript' src='java/jquery-ui.js'></script>", "");
 
 ?>
-
 		<div id="prof_pic">
   			<div class="pictureAndButtonDiv">
     			<div class="cell">
