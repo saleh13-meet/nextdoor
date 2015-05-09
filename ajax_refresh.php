@@ -26,7 +26,7 @@
 	    echo '<a href="profile.php?id='.$id.'"><li onclick="set_item(\''.str_replace("'", "\'", $query).'\')">'.$country_name.'</li></a>';
 	}
 
-	$sql = "SELECT * FROM users WHERE lastname LIKE '$keyword%' AND firstname NOT LIKE '$keyword%' ORDER BY lastname LIMIT 0,3";
+	$sql = "SELECT * FROM users WHERE lastname LIKE '$keyword%' AND firstname NOT LIKE '$keyword%' ORDER BY lastname, firstname LIMIT 0,3";
 
 	$query = $pdo->prepare($sql);
 	$query->bindParam(':keyword', $keyword, PDO::PARAM_STR);
