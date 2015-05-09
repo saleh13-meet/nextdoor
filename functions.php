@@ -228,6 +228,10 @@
 	}
 
 	function my_friends_search($friends, $id){
+		if ($friends == '') {
+			my_friends($id);
+			exit();
+		}
 		$sql = "SELECT * FROM friends WHERE user2 = '$id' AND accepted = 1 OR user1 = '$id' AND accepted = 1";
 		$result = mysql_query($sql)or die(mysql_error());
 
