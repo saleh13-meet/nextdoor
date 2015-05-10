@@ -153,7 +153,7 @@
 
 		echo'</header>';
 		$not = notif();
-		echo '<div id="men"></div><div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad><a href="friends.php">Friends ('.num_friends($id).')</a></pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
+		echo '<div id="men"></div><div id="menu"><pad id="more"><a href="myProfile.php?id='.$id.'">Profile</a></pad> <pad><a href="home.php">HomePage</a></pad> <pad><a href="events.php">Events</a></pad> <pad><a href="friends.php">Friends ('.num_friends($id).')</a></pad> <pad><a href="notif.php">Notifications ( '.notif().' new / '.notif3().' )</a></pad></div>';
 	}
 
 	function notif(){
