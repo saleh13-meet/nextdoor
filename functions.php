@@ -61,7 +61,7 @@
 		while ($data = mysql_fetch_array($result)) {
 			echo "Nickname: <label class='inf' id='nickname'>".$data['nickname']."</label><ed1> edit</ed1><input type='text' class='nickname'><done1>done</done1><br><br>
 				  City: <label class='inf' id='city'>".$data['city']."</label><ed2> edit</ed2><input type='text' class='city'><done2>done</done2><br><br>
-				  details: <br><label class='inf' id='details'>".$data['details']."</label><ed3> edit</ed3><textarea class='123' rows='6' class='details'></textarea><done3>done</done3>";
+				  details: <br><label class='inf' id='details'>".$data['details']."</label><ed3> edit</ed3><textarea id='123' rows='6' class='details'></textarea><done3>done</done3>";
 		}
 	}
 
