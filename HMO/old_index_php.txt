@@ -1,0 +1,112 @@
+<?php
+
+	session_start();
+
+	include 'master.php';
+
+	connect('HMO');
+
+	if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
+		$username = $_SESSION['username'];
+		$password = $_SESSION['password'];
+
+		$sql1 = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."' LIMIT 1";
+
+		$result1 = mysql_query( $sql1)or die(mysql_error());
+
+		if(mysql_num_rows($result1) == 1){
+			echo "<script>
+			window.location.href='home.php';
+			</script>";
+
+		}else{
+			session_destroy();
+			echo"<script>
+			window.location.href='index.php';
+			</script>";
+		}
+	}
+
+	if(isset($_POST['submit'])){
+
+		$FirstName = $_POST['FirstName'];
+		$LastName  = $_POST['LastName'];
+		$Age       = $_POST['Age'];
+		$Username  = $_POST['Username'];
+		$Password  = $_POST['Password'];
+		$RePassword = $_POST['RePassword'];
+		$Email     = $_POST['Email'];
+
+		$sql1 = "SELECT * FROM users WHERE Username = '".$Username."' LIMIT 1";
+
+		$result1 = mysql_query( $sql1)or die(mysql_error());
+
+		if(mysql_num_rows($result1) == 1){
+			echo "<script>alert('Username already exist!'); window.location.href='index.php';</script>";
+		}elseif($Password != $RePassword){
+			echo "<script> alert('Password does not match!');
+			window.location.href='index.php';
+			</script>";
+		}else{
+			$sql = "INSERT INTO users(`id`, `FirstName`, `LastName`, `Username`, `Password`, `Age`, `Email`, `img`) VALUES('', '$FirstName', '$LastName', '$Username', '$Password', '$Age', '$Email', 'default.jpg')";
+
+			$sql2 = "SELECT * FROM users WHERE `Username` = '$Username'";
+
+			$result2 = mysql_query($sql2)or die(mysql_error());
+
+			$num_rows = mysql_num_rows($result2);
+
+			if ($num_rows > 0) {
+				$_SESSION['username'] = $Username; 
+				echo "<script>
+				window.location.href='home.php';
+				</script>";
+			}
+
+			echo "<script>alert('Thanks')</script>";
+			
+			mysql_query($sql)or die(mysql_error());
+			$_SESSION['username'] = $Username;
+			$_SESSION['password'] = $Password;
+			$_SESSION['first'] = true;
+			$sql3 = "SELECT * FROM users WHERE `Username` = '$Username'";
+			$result3 = mysql_query($sql3);
+			$data = mysql_fetch_array($result3);
+			$id = $data['id'];
+			mkdir("images/profile/$id");
+			echo "<script>window.location.href='first.php'</script>";
+		}
+	}
+
+	if(isset($_POST['submit2'])){
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+
+		$sql1 = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."' LIMIT 1";
+	
+		$result1 = mysql_query( $sql1)or die(mysql_error());
+
+		if(mysql_num_rows($result1) == 1){
+
+			while ($data = mysql_fetch_array($result1)) {
+				$_SESSION['id'] = $data['id'];
+				$first = $data['first'];
+			}
+
+			if ($first == 0) {
+				$_SESSION['first'] = true;
+				$_SESSION['username'] = $username;
+				$_SESSION['password'] = $password;
+				header("location:first.php");
+			}else{
+				$_SESSION['username'] = $username;
+				$_SESSION['password'] = $password;
+				header("location:home.php");
+			}
+
+		}else{
+			echo '<script>alert("Username or Password wrong!")</script>';
+		}
+	}
+
+?>

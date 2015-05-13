@@ -22,12 +22,6 @@ if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
 				<div class="alert-box error username"><span>error: </span>Please fill in username</div>
 				<div class="alert-box error password"><span>error: </span>Please fill in Password</div>
 			 <ul>
-			 	<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
 				 <li>
 					 <label for="username">Username : </label>
 					 <input type="text" id="username" maxlength="64" required="" autofocus name="username">
@@ -47,5 +41,6 @@ if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
 				</li>
 			</ul>
 		</div>
+		<div style="display: none;"><a href="hmo/index.php">HMO</a></div>
 	</body>
 </html>

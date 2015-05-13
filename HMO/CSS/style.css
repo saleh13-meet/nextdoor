@@ -1,0 +1,84 @@
+body{
+  	overflow-x: hidden;
+}
+
+#nohover:hover{
+	cursor: default;	
+}
+
+#nohover2:hover{
+	cursor: default;	
+}
+
+#nohover3:hover{
+	cursor: default;	
+}
+
+select{
+	text-indent: 45%;
+	font-size: 14px;
+}
+
+.row > .jumbotron{
+	cursor: pointer;
+}
+
+.prof{
+	background: url("../images/prof_bg.jpg") repeat-x left center;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.name{
+	background-color: #F2ECE2;
+	padding: 5px;
+	border: 2px solid #c7a871;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.cover{
+	max-height: 470px;
+	margin-top: 51px;
+}
+
+.center{
+	text-align: center;
+}
+
+.over{
+	box-shadow: inset 0px 0px 10px 3px #253342;
+  	position: absolute;
+  	top: 51px;
+	left: 0;
+  	width: 110%;
+  	margin-left: -5%;
+  	height: calc(100% - 51px);
+  	background-color: rgba(37,51,66,.01);
+}
+
+.change{
+	display: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.bg > .navbar{
+	background-color: #293645;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+  	.cover{
+  		max-height: 370px;
+  	}
+}
