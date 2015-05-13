@@ -198,7 +198,7 @@ $("#form").submit(function() {
 });
 
 $("#submit").click(function() {
-    document.cookie = "page=index.php; 10;";
+    document.cookie = "page=Index.php; 10;";
 });
 
 </script>
