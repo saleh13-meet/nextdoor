@@ -21,7 +21,7 @@
 glyphicon glyphicon-envelope"></span> <span class="hidden-md hidden-sm">Contact Help Me Out</span></a></li>
                 </ul>
             	<form class="navbar-form navbar-right" role="login" action="login.php" method="POST">
-        			<div class="form-group">
+        			<div class="form-group"> 
         				<?php
         				if (isset($_GET['username'])) {
         					$username = $_GET['username'];
