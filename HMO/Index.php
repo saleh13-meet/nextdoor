@@ -190,7 +190,7 @@ function lastnameCheck(){
 
 $("#form").submit(function() {
 	if ($("#status0").children().attr("id") == 'nohover2' && $("#status1").children().attr("id") == 'nohover2' && $("#status2").children().attr("id") == 'nohover2' && $("#status3").children().attr("id") == 'nohover2' && $("#status4").children().attr("id") == 'nohover2' && $("#status6").children().attr("id") == 'nohover2') {
-		return true;
+		return true; 
 	}else{
 		alert('You must see six green boxes!');
 		return false;
