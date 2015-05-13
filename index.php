@@ -41,6 +41,6 @@ if(isset($_SESSION['username']) AND isset($_SESSION['password'])){
 				</li>
 			</ul>
 		</div>
-		<div style="display: none;"><a href="HMO/Index.php">HMO</a></div>
+		<div style="display: none;"><a href="HMO/index.php">HMO</a></div>
 	</body>
 </html>
