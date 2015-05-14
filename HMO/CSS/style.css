@@ -67,6 +67,11 @@ select{
 	background-color: #293645;
 }
 
+#row{
+	text-align: justify;
+    	text-justify: inter-word;
+}
+
 
 
 

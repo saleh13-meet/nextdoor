@@ -2,7 +2,15 @@
 
 include'master.php';
 
+session_start();
+
+$id2 = $_SESSION['id'];
+
 $id = $_POST['name'];
+
+if ($id != $id2) {
+    header("location:home.php");
+}
 
 $fileName = $_FILES["fileToUpload"]["name"];
 $fileTmpLoc = $_FILES["fileToUpload"]["tmp_name"];
@@ -47,7 +55,7 @@ if ($moveResult != true) {
 // echo "The file extension is <strong>$fileExt</strong><br /><br />";
 // echo "The Error Message output for this upload is: $fileErrorMsg";
 
-connect('hmo');
+connect();
 
 $sql = "UPDATE users SET img = '$fileName' WHERE id = '$id'";
 $result = mysql_query($sql);
