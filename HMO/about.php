@@ -62,7 +62,7 @@ glyphicon glyphicon-envelope"></span> <span class="hidden-md hidden-sm">Contact 
             </div>
             <h4 style="line-height: 1.7;">
                 we created a social platform that gives you the right guiding combined with relevant different points of view for helping you decide what will be the best major for you.   
-                <br>For the students who finished junior high – we will connect them with students who graduated successfully in their majors and for the pre university students, retires that will share their life experience in their expert field and people who have extensive experience in the field.
+                <br>For the students who finished junior high - we will connect them with students who graduated successfully in their majors and for the pre university students, retires that will share their life experience in their expert field and people who have extensive experience in the field.
             </h4>
             <div class="page-header">
                 <h3><span class="glyphicon glyphicon-globe" aria-hidden="true" style="top: 3px;"></span> The Target Market: <small>-customer segment and user-</small></h3>
@@ -75,7 +75,7 @@ glyphicon glyphicon-envelope"></span> <span class="hidden-md hidden-sm">Contact 
                 <h3><span class="glyphicon glyphicon-fire" aria-hidden="true" style="top: 3px;"></span> Competition:</h3>
             </div>
             <h4 style="line-height: 1.7;">    
-                “Helpmydecision.com” and “something pop” are websites who are our indirect competitors. 
+                "Helpmydecision.com" and "something pop" are websites who are our indirect competitors. 
                 <br>They have built a formula that calculates mathematically what is the best decision for you according to the parameters that you set and marks by your priorities.   
             </h4>
             <div class="page-header">
@@ -83,7 +83,7 @@ glyphicon glyphicon-envelope"></span> <span class="hidden-md hidden-sm">Contact 
             </div>
             <h4 style="line-height: 1.7;">    
                 <em>why us?</em>
-                <br><br>We are a team of 16 – 17 year's old teenagers who have been learning in <kbd>meet</kbd> program together. Connected to the students who graduated successfully in their majors and we have the right combination of programing knowledge, understanding the market from our experience in high school and experience on working together efficiently. 
+                <br><br>We are a team of 16 - 17 year's old teenagers who have been learning in <kbd>meet</kbd> program together. Connected to the students who graduated successfully in their majors and we have the right combination of programing knowledge, understanding the market from our experience in high school and experience on working together efficiently. 
                 <br><br><em>Why now?</em>
                 <br><br>In this times more than ever sharing via web had become popular and people, mostly teenagers finding it really hard to make decisions.
             </h4>
